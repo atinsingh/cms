@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_map_json_news_jsons",
+  "info": {
+    "displayName": "NewsJSON",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "desc": {
+      "type": "richtext"
+    },
+    "createDate": {
+      "type": "date"
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorImageUrl": {
+      "type": "text"
+    },
+    "newsImageUrl": {
+      "type": "text"
+    },
+    "newsTitle": {
+      "type": "text"
+    },
+    "newsImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "authorImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

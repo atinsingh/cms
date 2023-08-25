@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_hero_hero_components",
+  "info": {
+    "displayName": "heroComponent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "btnText": {
+      "type": "string"
+    },
+    "btnHref": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

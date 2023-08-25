@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_map_json_assured_jsons",
+  "info": {
+    "displayName": "assuredJSON"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "iconUrl": {
+      "type": "text"
+    }
+  }
+}

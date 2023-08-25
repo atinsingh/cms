@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_map_json_faq_jsons",
+  "info": {
+    "displayName": "FaqJSON"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "text"
+    }
+  }
+}
