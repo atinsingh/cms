@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "financial_supports",
+  "info": {
+    "singularName": "financial-support",
+    "pluralName": "financial-supports",
+    "displayName": "FinancialSupport"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "features": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    },
+    "seoFinancialPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "Faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.faq-json"
+    }
+  }
+}

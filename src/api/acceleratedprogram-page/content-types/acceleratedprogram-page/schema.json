@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "acceleratedprogram_pages",
+  "info": {
+    "singularName": "acceleratedprogram-page",
+    "pluralName": "acceleratedprogram-pages",
+    "displayName": "AcceleratedprogramPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SeoAccelerated": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "AcceleratedHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero-component"
+    },
+    "acceleratedHiringCloud": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hiring-cloud.hiring-cloud"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "employers_pages",
+  "collectionName": "careerpath_pages",
   "info": {
-    "singularName": "employers-page",
-    "pluralName": "employers-pages",
-    "displayName": "employersPage",
+    "singularName": "careerpath-page",
+    "pluralName": "careerpath-pages",
+    "displayName": "CareerpathPage",
     "description": ""
   },
   "options": {
@@ -12,27 +12,27 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "SeoEmployers": {
+    "SeoCareerPage": {
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
     },
-    "employersHero": {
+    "CareerHero": {
       "type": "component",
       "repeatable": false,
       "component": "hero.hero-component"
     },
-    "employersFeature": {
+    "careerFeaturePath": {
       "type": "component",
       "repeatable": false,
-      "component": "hero.features"
+      "component": "advantage.advantage-home"
     },
-    "employerProcess": {
+    "careerHiringCloud": {
       "type": "component",
       "repeatable": false,
-      "component": "hero.features"
+      "component": "hiring-cloud.hiring-cloud"
     },
-    "pragraAdvantage": {
+    "financialAssistance": {
       "type": "component",
       "repeatable": false,
       "component": "advantage.advantage-home"

@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_advantage_advantage_homes",
+  "collectionName": "components_hiring_cloud_hiring_clouds",
   "info": {
-    "displayName": "advantageHome",
+    "displayName": "HiringCloud",
     "description": ""
   },
   "options": {},
@@ -9,18 +9,18 @@
     "heading": {
       "type": "string"
     },
-    "subHeading": {
-      "type": "string"
-    },
     "shortDescription": {
       "type": "text"
     },
-    "imageUrl": {
-      "type": "text"
+    "btnText": {
+      "type": "string"
     },
-    "image": {
+    "accelerate": {
+      "type": "boolean"
+    },
+    "hiringImage": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images",
@@ -29,10 +29,11 @@
         "audios"
       ]
     },
-    "featureJSON": {
+    "HiringJSON": {
+      "displayName": "HiringJSON",
       "type": "component",
-      "repeatable": true,
-      "component": "map-json.assured-json"
+      "repeatable": false,
+      "component": "map-json.hiring-json"
     }
   }
 }
