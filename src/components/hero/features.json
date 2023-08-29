@@ -12,13 +12,23 @@
     "shortDescription": {
       "type": "text"
     },
+    "imageUrl": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
     "assuredJSON": {
       "type": "component",
       "repeatable": true,
       "component": "map-json.assured-json"
-    },
-    "imageUrl": {
-      "type": "text"
     }
   }
 }
