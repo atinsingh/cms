@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "reskill_pages",
+  "info": {
+    "singularName": "reskill-page",
+    "pluralName": "reskill-pages",
+    "displayName": "ReskillPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SeoReskillPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "ReskillHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero-component"
+    },
+    "ReskillSteps": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.features"
+    },
+    "companyBrief": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hiring-cloud.brief-deatail"
+    }
+  }
+}

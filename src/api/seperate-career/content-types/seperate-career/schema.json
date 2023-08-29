@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seperate_careers",
+  "info": {
+    "singularName": "seperate-career",
+    "pluralName": "seperate-careers",
+    "displayName": "SeperateCareer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "ShortDescription": {
+      "type": "text"
+    },
+    "JobType": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "SalaryRange": {
+      "type": "string"
+    },
+    "JobStatus": {
+      "type": "string"
+    },
+    "JobDescription": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "heading"
+    }
+  }
+}

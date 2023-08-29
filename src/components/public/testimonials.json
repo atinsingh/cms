@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_public_testimonials",
+  "info": {
+    "displayName": "Testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "ClientName": {
+      "type": "string"
+    },
+    "Testimonial": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ClientCompany": {
+      "type": "string"
+    },
+    "ClientTitle": {
+      "type": "string"
+    },
+    "ImageUrl": {
+      "type": "text"
+    }
+  }
+}

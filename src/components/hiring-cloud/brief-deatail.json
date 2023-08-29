@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_hiring_cloud_brief_deatails",
+  "info": {
+    "displayName": "briefDeatail"
+  },
+  "options": {},
+  "attributes": {
+    "ClientName": {
+      "type": "string"
+    },
+    "ClientRole": {
+      "type": "string"
+    },
+    "CompanyImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "CompanyImageUrl": {
+      "type": "text"
+    },
+    "ShortDescription": {
+      "type": "text"
+    }
+  }
+}

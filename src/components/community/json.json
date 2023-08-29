@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_map_json_assured_jsons",
+  "collectionName": "components_community_jsons",
   "info": {
-    "displayName": "assuredJSON",
-    "description": ""
+    "displayName": "json"
   },
   "options": {},
   "attributes": {
@@ -13,21 +12,17 @@
       "type": "text"
     },
     "icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "iconUrl": {
       "type": "text"
-    },
-    "name": {
-      "type": "string"
     }
   }
 }

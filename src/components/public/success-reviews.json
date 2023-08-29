@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_public_success_reviews",
+  "info": {
+    "displayName": "SuccessReviews"
+  },
+  "options": {},
+  "attributes": {
+    "ClientName": {
+      "type": "string"
+    },
+    "CompanyName": {
+      "type": "string"
+    },
+    "ShortDescription": {
+      "type": "text"
+    },
+    "Rating": {
+      "type": "integer"
+    },
+    "CompanyLink": {
+      "type": "text"
+    },
+    "ClientRole": {
+      "type": "string"
+    },
+    "ImageUrl": {
+      "type": "text"
+    }
+  }
+}

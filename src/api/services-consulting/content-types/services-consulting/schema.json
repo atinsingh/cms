@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "services_consultings",
+  "info": {
+    "singularName": "services-consulting",
+    "pluralName": "services-consultings",
+    "displayName": "ServicesConsulting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SeoConsulting": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "pageHeader": {
+      "type": "string"
+    },
+    "qaType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "community.json"
+    }
+  }
+}
