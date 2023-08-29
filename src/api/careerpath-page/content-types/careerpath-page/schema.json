@@ -22,11 +22,6 @@
       "repeatable": false,
       "component": "hero.hero-component"
     },
-    "careerFeaturePath": {
-      "type": "component",
-      "repeatable": false,
-      "component": "advantage.advantage-home"
-    },
     "careerHiringCloud": {
       "type": "component",
       "repeatable": false,

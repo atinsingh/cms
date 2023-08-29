@@ -22,11 +22,6 @@
       "repeatable": false,
       "component": "hero.hero-component"
     },
-    "ReskillSteps": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hero.features"
-    },
     "companyBrief": {
       "type": "component",
       "repeatable": false,
