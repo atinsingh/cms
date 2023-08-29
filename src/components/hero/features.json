@@ -6,13 +6,19 @@
   },
   "options": {},
   "attributes": {
-    "name": {
+    "heading": {
       "type": "string"
     },
-    "marketJSON": {
+    "shortDescription": {
+      "type": "text"
+    },
+    "assuredJSON": {
       "type": "component",
       "repeatable": true,
-      "component": "community.json"
+      "component": "map-json.assured-json"
+    },
+    "imageUrl": {
+      "type": "text"
     }
   }
 }
