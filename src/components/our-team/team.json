@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_advantage_advantage_homes",
+  "collectionName": "components_our_team_teams",
   "info": {
-    "displayName": "advantageHome",
+    "displayName": "team",
     "description": ""
   },
   "options": {},
@@ -9,16 +9,10 @@
     "heading": {
       "type": "string"
     },
-    "subHeading": {
-      "type": "string"
-    },
     "shortDescription": {
       "type": "text"
     },
-    "imageUrl": {
-      "type": "text"
-    },
-    "images": {
+    "memberImage": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -29,10 +23,10 @@
         "audios"
       ]
     },
-    "featureJSON": {
+    "membersJSON": {
       "type": "component",
       "repeatable": true,
-      "component": "map-json.feature-json"
+      "component": "map-json.members-json"
     }
   }
 }

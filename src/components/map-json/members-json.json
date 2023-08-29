@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_map_json_members_jsons",
+  "info": {
+    "displayName": "membersJSON"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "text"
+    },
+    "role": {
+      "type": "string"
+    },
+    "linkedinUrl": {
+      "type": "text"
+    },
+    "twitterUrl": {
+      "type": "text"
+    }
+  }
+}

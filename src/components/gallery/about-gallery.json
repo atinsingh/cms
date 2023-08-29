@@ -1,15 +1,12 @@
 {
-  "collectionName": "components_partnerlogo_partners",
+  "collectionName": "components_gallery_about_galleries",
   "info": {
-    "displayName": "partners",
+    "displayName": "aboutGallery",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "string"
-    },
-    "partnersImage": {
+    "Gallery": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -20,13 +17,13 @@
         "audios"
       ]
     },
-    "partnersImageUrl": {
-      "type": "text"
+    "heading": {
+      "type": "string"
     },
-    "partnerJSON": {
+    "galleryJSON": {
       "type": "component",
       "repeatable": true,
-      "component": "map-json.partner-json"
+      "component": "map-json.gallery-json"
     }
   }
 }

@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "seo_abouts",
+  "info": {
+    "singularName": "seo-about",
+    "pluralName": "seo-abouts",
+    "displayName": "AboutPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SeoAbout": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "pageHeader": {
+      "type": "string"
+    },
+    "longDescription": {
+      "type": "text"
+    },
+    "AboutGallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "gallery.about-gallery"
+    },
+    "aboutPartner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partnerlogo.partners"
+    }
+  }
+}

@@ -6,30 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "heading": {
+    "name": {
       "type": "string"
     },
-    "shortDescription": {
-      "type": "text"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "imageUrl": {
-      "type": "text"
-    },
-    "assuredJSON": {
+    "marketJSON": {
       "type": "component",
       "repeatable": true,
-      "component": "map-json.assured-json"
+      "component": "community.json"
     }
   }
 }
