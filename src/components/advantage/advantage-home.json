@@ -29,10 +29,10 @@
         "audios"
       ]
     },
-    "featureJSON": {
+    "advantageJSON": {
       "type": "component",
       "repeatable": true,
-      "component": "map-json.feature-json"
+      "component": "map-json.assured-json"
     }
   }
 }

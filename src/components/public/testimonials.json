@@ -8,11 +8,6 @@
   "attributes": {
     "name": {
       "type": "string"
-    },
-    "marketJSON": {
-      "type": "component",
-      "repeatable": true,
-      "component": "community.json"
     }
   }
 }

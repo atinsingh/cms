@@ -26,6 +26,26 @@
       "type": "component",
       "repeatable": true,
       "component": "map-json.stats-json"
+    },
+    "advantageHome": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    },
+    "assuredHome": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    },
+    "communityHome": {
+      "type": "component",
+      "repeatable": false,
+      "component": "community.community-data"
+    },
+    "reviewTestimonial": {
+      "type": "component",
+      "repeatable": true,
+      "component": "public.review-testimonial"
     }
   }
 }
