@@ -26,6 +26,11 @@
       "type": "component",
       "repeatable": false,
       "component": "hiring-cloud.brief-deatail"
+    },
+    "reskillSteps": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assured.assured"
     }
   }
 }
