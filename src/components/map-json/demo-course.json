@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_map_json_demo_courses",
+  "info": {
+    "displayName": "demoCourse"
+  },
+  "options": {},
+  "attributes": {
+    "courseName": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "demoDate": {
+      "type": "date"
+    },
+    "instructors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.demo-instructor"
+    }
+  }
+}
