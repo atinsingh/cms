@@ -23,7 +23,7 @@
     "qaType": {
       "type": "component",
       "repeatable": false,
-      "component": "community.json"
+      "component": "qa-type.qa-type"
     }
   }
 }

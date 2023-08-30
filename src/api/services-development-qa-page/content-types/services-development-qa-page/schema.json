@@ -25,12 +25,12 @@
       "repeatable": false,
       "component": "advantage.advantage-home"
     },
-    "features": {
+    "FocusFeature": {
       "type": "component",
       "repeatable": false,
-      "component": "hero.features"
+      "component": "public.testimonials"
     },
-    "FocusFeature": {
+    "Features": {
       "type": "component",
       "repeatable": false,
       "component": "public.testimonials"

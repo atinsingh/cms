@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_public_testimonials",
+  "collectionName": "components_qa_type_qa_types",
   "info": {
-    "displayName": "Testimonials",
+    "displayName": "qa-Type",
     "description": ""
   },
   "options": {},
@@ -9,7 +9,7 @@
     "name": {
       "type": "string"
     },
-    "marketjson": {
+    "marketJSON": {
       "type": "component",
       "repeatable": true,
       "component": "map-json.assured-json"
