@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedule_demos",
+  "info": {
+    "singularName": "schedule-demo",
+    "pluralName": "schedule-demos",
+    "displayName": "scheduleDemo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "canonicalName": {
+      "type": "string"
+    },
+    "courseName": {
+      "type": "string"
+    },
+    "courseType": {
+      "type": "string"
+    },
+    "cohorts": {
+      "type": "component",
+      "repeatable": false,
+      "component": "map-json.demo-course"
+    }
+  }
+}
