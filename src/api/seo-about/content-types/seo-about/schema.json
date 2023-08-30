@@ -32,6 +32,11 @@
       "type": "component",
       "repeatable": false,
       "component": "partnerlogo.partners"
+    },
+    "ourTeam": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-team.team"
     }
   }
 }
