@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skilldevelopment_pages",
+  "info": {
+    "singularName": "skilldevelopment-page",
+    "pluralName": "skilldevelopment-pages",
+    "displayName": "skilldevelopmentPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "canonicalName": {
+      "type": "string"
+    },
+    "courseName": {
+      "type": "string"
+    },
+    "courseType": {
+      "type": "string"
+    },
+    "deliveryMode": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "canonicalName"
+    },
+    "curriculam": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.advantage-json"
+    },
+    "marketOverview": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.assured-json"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.faq-json"
+    },
+    "review": {
+      "type": "component",
+      "repeatable": false,
+      "component": "public.review-testimonial"
+    },
+    "cohorts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "schedule.course-schedule"
+    },
+    "mentors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.members-json"
+    },
+    "careerOpportunities": {
+      "type": "component",
+      "repeatable": false,
+      "component": "schedule.opportunities"
+    }
+  }
+}

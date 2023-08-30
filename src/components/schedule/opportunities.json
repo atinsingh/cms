@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_schedule_opportunities",
+  "info": {
+    "displayName": "opportunities",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "shortDescription": {
+      "type": "text"
+    },
+    "imageData": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.image-and-sub-title"
+    }
+  }
+}

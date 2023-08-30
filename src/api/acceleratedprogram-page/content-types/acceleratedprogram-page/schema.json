@@ -26,6 +26,11 @@
       "type": "component",
       "repeatable": false,
       "component": "hiring-cloud.hiring-cloud"
+    },
+    "acceleratedFeature": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assured.accelerated-career"
     }
   }
 }

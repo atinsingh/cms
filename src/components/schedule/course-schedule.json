@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_schedule_course_schedules",
+  "info": {
+    "displayName": "courseSchedule",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "demoDate": {
+      "type": "date"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "cohortName": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "component",
+      "repeatable": true,
+      "component": "schedule.duration"
+    },
+    "instructors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.demo-instructor"
+    }
+  }
+}

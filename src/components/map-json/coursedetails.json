@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_map_json_coursedetails",
+  "info": {
+    "displayName": "coursedetails"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "iconUrl": {
+      "type": "text"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "courseDuration": {
+      "type": "string"
+    },
+    "courseTotalHours": {
+      "type": "string"
+    },
+    "courseType": {
+      "type": "enumeration",
+      "enum": [
+        "Instructor Lead Class Room"
+      ]
+    }
+  }
+}
