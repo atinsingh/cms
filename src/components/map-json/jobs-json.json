@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_map_json_jobs_jsons",
+  "info": {
+    "displayName": "jobsJSON"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "jobType": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "salaryRange": {
+      "type": "string"
+    },
+    "jobStatus": {
+      "type": "string"
+    }
+  }
+}

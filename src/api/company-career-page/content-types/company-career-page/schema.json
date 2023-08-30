@@ -4,7 +4,8 @@
   "info": {
     "singularName": "company-career-page",
     "pluralName": "company-career-pages",
-    "displayName": "CompanyCareerPage"
+    "displayName": "CompanyCareerPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
+    },
+    "jobs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.job-posting"
     }
   }
 }
