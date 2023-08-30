@@ -1,10 +1,11 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "mentor_pages",
   "info": {
     "singularName": "mentor-page",
     "pluralName": "mentor-pages",
-    "displayName": "MentorPage"
+    "displayName": "MentorPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

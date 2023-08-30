@@ -1,14 +1,15 @@
 {
   "collectionName": "components_seo_seos",
   "info": {
-    "displayName": "Seo"
+    "displayName": "Seo",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "metaTitle": {
       "type": "string"
     },
-    "MetaDiscription": {
+    "MetaDescription": {
       "type": "text"
     },
     "keywords": {

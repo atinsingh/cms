@@ -17,15 +17,15 @@
       "repeatable": false,
       "component": "seo.seo"
     },
-    "SuccessTestimonials": {
-      "type": "component",
-      "repeatable": true,
-      "component": "public.testimonials"
-    },
     "ClientReviews": {
       "type": "component",
       "repeatable": true,
       "component": "public.success-reviews"
+    },
+    "reviewTestimonial": {
+      "type": "component",
+      "repeatable": true,
+      "component": "public.review-testimonial"
     }
   }
 }
