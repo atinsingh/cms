@@ -4,7 +4,8 @@
   "info": {
     "singularName": "seperate-blog",
     "pluralName": "seperate-blogs",
-    "displayName": "seperateBlog"
+    "displayName": "seperateBlog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,7 +35,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "blogTitle"
+      "targetField": "blogTitle",
+      "required": true
     },
     "authorImageUrl": {
       "type": "text"
