@@ -4,7 +4,8 @@
   "info": {
     "singularName": "seperate-career",
     "pluralName": "seperate-careers",
-    "displayName": "SeperateCareer"
+    "displayName": "SeperateCareer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,7 +35,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "heading"
+      "targetField": "heading",
+      "required": true
     }
   }
 }

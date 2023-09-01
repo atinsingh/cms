@@ -43,7 +43,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "canonicalName"
+      "targetField": "canonicalName",
+      "required": true
     },
     "curriculam": {
       "type": "component",
