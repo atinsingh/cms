@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_assured_accelerated_careers",
+  "info": {
+    "displayName": "acceleratedCareer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "featureJSON": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.coursedetails"
+    }
+  }
+}

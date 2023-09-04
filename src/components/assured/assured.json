@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_assured_assureds",
+  "info": {
+    "displayName": "Assured"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "asssuredJSON": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.assured-json"
+    }
+  }
+}

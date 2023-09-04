@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_map_json_demo_instructors",
+  "info": {
+    "displayName": "demoInstructor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "instructorName": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "company": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    }
+  }
+}

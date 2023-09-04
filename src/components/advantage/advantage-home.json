@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_advantage_advantage_homes",
+  "info": {
+    "displayName": "advantageHome",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "advantageJSON": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.assured-json"
+    }
+  }
+}

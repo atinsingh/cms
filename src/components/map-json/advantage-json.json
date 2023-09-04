@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_map_json_advantage_jsons",
+  "info": {
+    "displayName": "advantageJSON"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

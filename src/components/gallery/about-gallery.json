@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_gallery_about_galleries",
+  "info": {
+    "displayName": "aboutGallery",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "galleryJSON": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.gallery-json"
+    }
+  }
+}

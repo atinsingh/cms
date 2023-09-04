@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "services_development_qa_pages",
+  "info": {
+    "singularName": "services-development-qa-page",
+    "pluralName": "services-development-qa-pages",
+    "displayName": "ServicesDevelopmentQaPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seoDevelopmentQa": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "pageHeader": {
+      "type": "string"
+    },
+    "testingService": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    },
+    "FocusFeature": {
+      "type": "component",
+      "repeatable": false,
+      "component": "public.testimonials"
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": false,
+      "component": "public.testimonials"
+    }
+  }
+}

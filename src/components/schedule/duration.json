@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_schedule_durations",
+  "info": {
+    "displayName": "duration"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "string"
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    }
+  }
+}

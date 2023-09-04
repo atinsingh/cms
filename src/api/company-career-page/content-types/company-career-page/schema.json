@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_career_pages",
+  "info": {
+    "singularName": "company-career-page",
+    "pluralName": "company-career-pages",
+    "displayName": "CompanyCareerPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SeoCompanyCareer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "jobs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.job-posting"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_hiring_cloud_hiring_clouds",
+  "info": {
+    "displayName": "HiringCloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "btnText": {
+      "type": "string"
+    },
+    "accelerate": {
+      "type": "boolean"
+    },
+    "hiringImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "HiringJSON": {
+      "displayName": "HiringJSON",
+      "type": "component",
+      "repeatable": false,
+      "component": "map-json.hiring-json"
+    }
+  }
+}

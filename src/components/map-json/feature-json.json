@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_map_json_feature_jsons",
+  "info": {
+    "displayName": "featureJSON"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    }
+  }
+}

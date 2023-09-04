@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mentors",
+  "info": {
+    "singularName": "mentor",
+    "pluralName": "mentors",
+    "displayName": "mentor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "role": {
+      "type": "string"
+    },
+    "currentCompany": {
+      "type": "string"
+    },
+    "companyLogo": {
+      "type": "text"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "companyLogoImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

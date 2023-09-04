@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_public_testimonials",
+  "info": {
+    "displayName": "Testimonials",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "marketjson": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.assured-json"
+    }
+  }
+}

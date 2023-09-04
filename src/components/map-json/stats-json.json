@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_map_json_stats_jsons",
+  "info": {
+    "displayName": "StatsJSON"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

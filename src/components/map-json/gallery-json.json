@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_map_json_gallery_jsons",
+  "info": {
+    "displayName": "galleryJSON"
+  },
+  "options": {},
+  "attributes": {
+    "imageUrl": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_map_json_partner_jsons",
+  "info": {
+    "displayName": "partnerJSON"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "imageURL": {
+      "type": "text"
+    }
+  }
+}

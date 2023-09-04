@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_qa_type_qa_types",
+  "info": {
+    "displayName": "qa-Type",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "marketJSON": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.assured-json"
+    }
+  }
+}

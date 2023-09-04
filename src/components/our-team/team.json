@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_our_team_teams",
+  "info": {
+    "displayName": "team",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "memberImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "membersJSON": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.members-json"
+    }
+  }
+}

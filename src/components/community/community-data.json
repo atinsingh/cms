@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_community_community_data",
+  "info": {
+    "displayName": "communityData",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "imageUrl": {
+      "type": "text"
+    }
+  }
+}

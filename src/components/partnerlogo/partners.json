@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_partnerlogo_partners",
+  "info": {
+    "displayName": "partners",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "partnersImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "partnersImageUrl": {
+      "type": "text"
+    },
+    "partnerJSON": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.partner-json"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "careerpath_pages",
+  "info": {
+    "singularName": "careerpath-page",
+    "pluralName": "careerpath-pages",
+    "displayName": "CareerpathPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SeoCareerPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "CareerHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero-component"
+    },
+    "careerHiringCloud": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hiring-cloud.hiring-cloud"
+    },
+    "financialAssistance": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    },
+    "careerFeaturePath": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    }
+  }
+}

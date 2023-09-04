@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_public_review_testimonials",
+  "info": {
+    "displayName": "reviewTestimonial"
+  },
+  "options": {},
+  "attributes": {
+    "clientName": {
+      "type": "string"
+    },
+    "clientCompany": {
+      "type": "string"
+    },
+    "clientTitle": {
+      "type": "string"
+    },
+    "companyUrl": {
+      "type": "text"
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "review": {
+      "type": "text"
+    }
+  }
+}

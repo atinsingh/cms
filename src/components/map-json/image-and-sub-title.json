@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_map_json_image_and_sub_titles",
+  "info": {
+    "displayName": "imageAndSubTitle"
+  },
+  "options": {},
+  "attributes": {
+    "imageUrl": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imageSubTitle": {
+      "type": "string"
+    }
+  }
+}

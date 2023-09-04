@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "talent_factory_pages",
+  "info": {
+    "singularName": "talent-factory-page",
+    "pluralName": "talent-factory-pages",
+    "displayName": "TalentFactoryPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "talentSeo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "talentFactoryHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero-component"
+    },
+    "hireTalent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assured.assured"
+    },
+    "assessmentProcess": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    },
+    "hiringSolution": {
+      "type": "component",
+      "repeatable": false,
+      "component": "advantage.advantage-home"
+    }
+  }
+}

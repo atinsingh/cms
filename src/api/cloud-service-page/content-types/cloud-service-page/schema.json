@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "cloud_service_pages",
+  "info": {
+    "singularName": "cloud-service-page",
+    "pluralName": "cloud-service-pages",
+    "displayName": "CloudServicePage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seoServiceCloud": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partnerlogo.partners"
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.features"
+    }
+  }
+}

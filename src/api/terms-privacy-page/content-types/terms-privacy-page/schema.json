@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_privacy_pages",
+  "info": {
+    "singularName": "terms-privacy-page",
+    "pluralName": "terms-privacy-pages",
+    "displayName": "TermsPrivacyPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SeoPrivacyandTerms": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "contents": {
+      "type": "richtext"
+    }
+  }
+}
