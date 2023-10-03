@@ -43,6 +43,9 @@
     },
     "blogDate": {
       "type": "date"
+    },
+    "blogImageUrl2": {
+      "type": "text"
     }
   }
 }
