@@ -80,6 +80,16 @@
       "type": "component",
       "repeatable": false,
       "component": "schedule.opportunities"
+    },
+    "careerCoach": {
+      "type": "component",
+      "repeatable": false,
+      "component": "course.careercoach"
+    },
+    "finance": {
+      "type": "component",
+      "repeatable": false,
+      "component": "course.finance"
     }
   }
 }

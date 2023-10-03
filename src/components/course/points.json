@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_course_components_points",
+  "info": {
+    "displayName": "points"
+  },
+  "options": {},
+  "attributes": {
+    "points": {
+      "type": "string"
+    }
+  }
+}

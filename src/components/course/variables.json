@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_course_variables",
+  "info": {
+    "displayName": "variables"
+  },
+  "options": {},
+  "attributes": {
+    "variableName": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    }
+  }
+}

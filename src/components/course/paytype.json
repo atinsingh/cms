@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_course_paytypes",
+  "info": {
+    "displayName": "paytype",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "payTag": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "strikePrice": {
+      "type": "string"
+    },
+    "actualPrice": {
+      "type": "string"
+    },
+    "beforeVariables": {
+      "type": "string"
+    },
+    "totalPrice": {
+      "type": "string"
+    },
+    "variables": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.variables"
+    },
+    "costDetails": {
+      "type": "text"
+    }
+  }
+}

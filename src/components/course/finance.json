@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_course_finances",
+  "info": {
+    "displayName": "finance"
+  },
+  "options": {},
+  "attributes": {
+    "paytype": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.paytype"
+    },
+    "name": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "imageUrl": {
+      "type": "text"
+    }
+  }
+}

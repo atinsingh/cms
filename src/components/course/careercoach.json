@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_course_career_coach",
+  "info": {
+    "displayName": "careerCoach",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "imageUrl": {
+      "type": "text"
+    },
+    "contentHeading": {
+      "type": "string"
+    },
+    "points": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.points"
+    }
+  }
+}
