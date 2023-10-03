@@ -21,7 +21,7 @@
     "actualPrice": {
       "type": "string"
     },
-    "beforeVariables": {
+    "originalPrice": {
       "type": "string"
     },
     "totalPrice": {
