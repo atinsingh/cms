@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_questions",
+  "info": {
+    "singularName": "lms-question",
+    "pluralName": "lms-questions",
+    "displayName": "lms-question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "wrong_answer_1": {
+      "type": "text"
+    },
+    "wrong_answer_2": {
+      "type": "text"
+    },
+    "wrong_answer_3": {
+      "type": "text"
+    },
+    "correct_answer_1": {
+      "type": "text"
+    },
+    "lms_quiz": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz.quiz",
+      "inversedBy": "lms_questions"
+    }
+  }
+}

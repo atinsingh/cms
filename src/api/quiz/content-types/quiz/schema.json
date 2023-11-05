@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quizzes",
+  "info": {
+    "singularName": "quiz",
+    "pluralName": "quizzes",
+    "displayName": "lms-quiz",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quizz_title": {
+      "type": "string"
+    },
+    "course_ID": {
+      "type": "string"
+    },
+    "lms_questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-question.lms-question",
+      "mappedBy": "lms_quiz"
+    }
+  }
+}
