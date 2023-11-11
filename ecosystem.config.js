@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'strapi',
+      name: 'cms',
       cwd: '/root/cms',
       script: 'yarn',
       args: 'start',
