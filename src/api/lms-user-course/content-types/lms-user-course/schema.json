@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms-user_courses",
+  "info": {
+    "singularName": "lms-user-course",
+    "pluralName": "lms-user-courses",
+    "displayName": "lms-user-course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_ID": {
+      "type": "string"
+    },
+    "course_ID": {
+      "type": "string"
+    },
+    "finish": {
+      "type": "boolean"
+    },
+    "lesson1": {
+      "type": "boolean"
+    },
+    "lesson2": {
+      "type": "boolean"
+    },
+    "lesson3": {
+      "type": "boolean"
+    },
+    "lesson4": {
+      "type": "boolean"
+    },
+    "lesson5": {
+      "type": "boolean"
+    },
+    "lesson6": {
+      "type": "boolean"
+    },
+    "lesson7": {
+      "type": "boolean"
+    },
+    "lesson8": {
+      "type": "boolean"
+    },
+    "lesson9": {
+      "type": "boolean"
+    },
+    "lesson10": {
+      "type": "boolean"
+    },
+    "lms_lessons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-lesson.lms-lesson"
+    }
+  }
+}

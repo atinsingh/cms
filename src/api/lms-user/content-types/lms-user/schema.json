@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_users",
+  "info": {
+    "singularName": "lms-user",
+    "pluralName": "lms-users",
+    "displayName": "lms-user"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_ID": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "pass": {
+      "type": "string"
+    },
+    "test": {
+      "type": "string"
+    }
+  }
+}

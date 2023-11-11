@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_lessons",
+  "info": {
+    "singularName": "lms-lesson",
+    "pluralName": "lms-lessons",
+    "displayName": "lms-lesson",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "video": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "course_ID": {
+      "type": "string"
+    },
+    "lesson_number": {
+      "type": "integer"
+    },
+    "finish": {
+      "type": "boolean"
+    }
+  }
+}
