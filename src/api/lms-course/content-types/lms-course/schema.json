@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_courses",
+  "info": {
+    "singularName": "lms-course",
+    "pluralName": "lms-courses",
+    "displayName": "lms-course"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "courseID": {
+      "type": "string"
+    },
+    "technology": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "lms_lessons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-lesson.lms-lesson"
+    }
+  }
+}
