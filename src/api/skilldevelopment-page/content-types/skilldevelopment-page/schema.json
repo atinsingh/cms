@@ -90,6 +90,11 @@
       "type": "component",
       "repeatable": false,
       "component": "course.finance"
+    },
+    "seoCourse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
