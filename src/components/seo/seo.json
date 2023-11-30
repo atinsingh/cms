@@ -13,7 +13,7 @@
       "type": "text"
     },
     "keywords": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
