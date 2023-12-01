@@ -46,6 +46,11 @@
     },
     "blogImageUrl2": {
       "type": "text"
+    },
+    "seoBlogs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
