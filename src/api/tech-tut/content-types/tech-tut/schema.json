@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tech_tuts",
+  "info": {
+    "singularName": "tech-tut",
+    "pluralName": "tech-tuts",
+    "displayName": "techtuts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDesc": {
+      "type": "text"
+    },
+    "tutorial": {
+      "type": "richtext"
+    },
+    "create_date": {
+      "type": "date"
+    },
+    "mentors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mentor.mentor",
+      "mappedBy": "tech_tut"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "coverphoto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
