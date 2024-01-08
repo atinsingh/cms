@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-course",
     "pluralName": "lms-courses",
-    "displayName": "lms-course"
+    "displayName": "lms-course",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,21 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::lms-lesson.lms-lesson"
+    },
+    "lms_mentors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lms-mentor.lms-mentor",
+      "inversedBy": "lms_courses"
+    },
+    "course_id": {
+      "type": "uid"
+    },
+    "start_date": {
+      "type": "datetime"
+    },
+    "end_date": {
+      "type": "datetime"
     }
   }
 }
