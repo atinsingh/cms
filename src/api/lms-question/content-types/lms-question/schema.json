@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-question",
     "pluralName": "lms-questions",
-    "displayName": "lms-question"
+    "displayName": "lms-question",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,24 +16,26 @@
       "type": "text"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "video": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "wrong_answer_1": {
       "type": "text"
@@ -51,6 +54,9 @@
       "relation": "manyToOne",
       "target": "api::quiz.quiz",
       "inversedBy": "lms_questions"
+    },
+    "question_id": {
+      "type": "uid"
     }
   }
 }

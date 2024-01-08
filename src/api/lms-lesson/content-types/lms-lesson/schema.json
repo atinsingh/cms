@@ -48,6 +48,9 @@
     },
     "finish": {
       "type": "boolean"
+    },
+    "lesson_id": {
+      "type": "uid"
     }
   }
 }

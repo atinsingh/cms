@@ -1,34 +1,24 @@
 {
   "kind": "collectionType",
-  "collectionName": "lms_users",
+  "collectionName": "lms_mentors",
   "info": {
-    "singularName": "lms-user",
-    "pluralName": "lms-users",
-    "displayName": "lms-user",
-    "description": ""
+    "singularName": "lms-mentor",
+    "pluralName": "lms-mentors",
+    "displayName": "lms-mentor"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "user_ID": {
-      "type": "string"
-    },
     "name": {
       "type": "string"
     },
-    "last_name": {
+    "lastName": {
       "type": "string"
     },
-    "email": {
-      "type": "string"
-    },
-    "pass": {
-      "type": "string"
-    },
-    "test": {
-      "type": "string"
+    "mentor_id": {
+      "type": "uid"
     },
     "profilePicture": {
       "allowedTypes": [
@@ -40,8 +30,11 @@
       "type": "media",
       "multiple": false
     },
-    "userid": {
-      "type": "uid"
+    "lms_courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lms-course.lms-course",
+      "mappedBy": "lms_mentors"
     }
   }
 }
