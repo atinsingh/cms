@@ -58,6 +58,12 @@
     },
     "user_coruse_id": {
       "type": "uid"
+    },
+    "start_date": {
+      "type": "datetime"
+    },
+    "end_date": {
+      "type": "datetime"
     }
   }
 }
