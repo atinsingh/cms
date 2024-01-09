@@ -1257,7 +1257,7 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
   };
   attributes: {
     user_ID: Attribute.String;
-    course_ID: Attribute.String;
+    courseID: Attribute.String;
     finish: Attribute.Boolean;
     lesson1: Attribute.Boolean;
     lesson2: Attribute.Boolean;

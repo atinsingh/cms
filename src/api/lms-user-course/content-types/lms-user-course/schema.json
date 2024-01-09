@@ -15,7 +15,7 @@
     "user_ID": {
       "type": "string"
     },
-    "course_ID": {
+    "courseID": {
       "type": "string"
     },
     "finish": {
