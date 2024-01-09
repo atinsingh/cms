@@ -1,10 +1,10 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "news_pages",
   "info": {
     "singularName": "news-page",
     "pluralName": "news-pages",
-    "displayName": "NewsPage",
+    "displayName": "newsPage",
     "description": ""
   },
   "options": {
@@ -14,7 +14,7 @@
   "attributes": {
     "newsData": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "map-json.news-json"
     },
     "SeoNews": {
