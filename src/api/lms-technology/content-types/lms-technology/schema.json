@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_technologies",
+  "info": {
+    "singularName": "lms-technology",
+    "pluralName": "lms-technologies",
+    "displayName": "lms-technology"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "technology": {
+      "type": "string"
+    },
+    "lms_mentors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lms-mentor.lms-mentor",
+      "inversedBy": "lms_technologies"
+    }
+  }
+}

@@ -46,6 +46,64 @@
     },
     "points": {
       "type": "biginteger"
+    },
+    "lms_certificate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-certificate.lms-certificate",
+      "mappedBy": "lms_user"
+    },
+    "lms_message": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-message.lms-message",
+      "mappedBy": "lms_user"
+    },
+    "lms_user_courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-user-course.lms-user-course"
+    },
+    "birth": {
+      "type": "date"
+    },
+    "street_name": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "CV": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "interests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interest.interest",
+      "mappedBy": "lms_user"
+    },
+    "academic_qualifications": {
+      "type": "text"
     }
   }
 }
