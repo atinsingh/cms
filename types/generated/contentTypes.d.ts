@@ -1225,6 +1225,7 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
     test: Attribute.String;
     profilePicture: Attribute.Media;
     userid: Attribute.UID;
+    points: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1256,7 +1257,7 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
   };
   attributes: {
     user_ID: Attribute.String;
-    course_ID: Attribute.String;
+    courseID: Attribute.String;
     finish: Attribute.Boolean;
     lesson1: Attribute.Boolean;
     lesson2: Attribute.Boolean;
@@ -1274,6 +1275,8 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
       'api::lms-lesson.lms-lesson'
     >;
     user_coruse_id: Attribute.UID;
+    start_date: Attribute.DateTime;
+    end_date: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

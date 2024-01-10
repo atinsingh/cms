@@ -15,7 +15,7 @@
     "user_ID": {
       "type": "string"
     },
-    "course_ID": {
+    "courseID": {
       "type": "string"
     },
     "finish": {
@@ -58,6 +58,12 @@
     },
     "user_coruse_id": {
       "type": "uid"
+    },
+    "start_date": {
+      "type": "datetime"
+    },
+    "end_date": {
+      "type": "datetime"
     }
   }
 }

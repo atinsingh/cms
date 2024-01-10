@@ -31,17 +31,21 @@
       "type": "string"
     },
     "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "userid": {
       "type": "uid"
+    },
+    "points": {
+      "type": "biginteger"
     }
   }
 }
