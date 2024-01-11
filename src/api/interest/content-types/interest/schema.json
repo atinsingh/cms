@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "interests",
+  "info": {
+    "singularName": "interest",
+    "pluralName": "interests",
+    "displayName": "interest"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "interest": {
+      "type": "string"
+    },
+    "lms_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lms-user.lms-user",
+      "inversedBy": "interests"
+    }
+  }
+}

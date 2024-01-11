@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_certificates",
+  "info": {
+    "singularName": "lms-certificate",
+    "pluralName": "lms-certificates",
+    "displayName": "lms-certificate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_ID": {
+      "type": "string"
+    },
+    "technology": {
+      "type": "string"
+    },
+    "certificate_name": {
+      "type": "string"
+    },
+    "lms_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-user.lms-user",
+      "inversedBy": "lms_certificate"
+    }
+  }
+}

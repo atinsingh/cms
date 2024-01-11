@@ -1040,6 +1040,78 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiInterestInterest extends Schema.CollectionType {
+  collectionName: 'interests';
+  info: {
+    singularName: 'interest';
+    pluralName: 'interests';
+    displayName: 'interest';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    interest: Attribute.String;
+    lms_user: Attribute.Relation<
+      'api::interest.interest',
+      'manyToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::interest.interest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::interest.interest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
+  collectionName: 'lms_certificates';
+  info: {
+    singularName: 'lms-certificate';
+    pluralName: 'lms-certificates';
+    displayName: 'lms-certificate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    user_ID: Attribute.String;
+    technology: Attribute.String;
+    certificate_name: Attribute.String;
+    lms_user: Attribute.Relation<
+      'api::lms-certificate.lms-certificate',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-certificate.lms-certificate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-certificate.lms-certificate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
   collectionName: 'lms_courses';
   info: {
@@ -1068,6 +1140,14 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
     course_id: Attribute.UID;
     start_date: Attribute.DateTime;
     end_date: Attribute.DateTime;
+    lms_module: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'oneToOne',
+      'api::lms-module.lms-module'
+    >;
+    description: Attribute.Text;
+    price: Attribute.Decimal;
+    duration: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1144,6 +1224,11 @@ export interface ApiLmsMentorLmsMentor extends Schema.CollectionType {
       'manyToMany',
       'api::lms-course.lms-course'
     >;
+    lms_technologies: Attribute.Relation<
+      'api::lms-mentor.lms-mentor',
+      'manyToMany',
+      'api::lms-technology.lms-technology'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1155,6 +1240,83 @@ export interface ApiLmsMentorLmsMentor extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-mentor.lms-mentor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsMessageLmsMessage extends Schema.CollectionType {
+  collectionName: 'lms_messages';
+  info: {
+    singularName: 'lms-message';
+    pluralName: 'lms-messages';
+    displayName: 'lms-message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    user_id: Attribute.String;
+    messages: Attribute.JSON;
+    lms_user: Attribute.Relation<
+      'api::lms-message.lms-message',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-message.lms-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-message.lms-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
+  collectionName: 'lms_modules';
+  info: {
+    singularName: 'lms-module';
+    pluralName: 'lms-modules';
+    displayName: 'lms-module';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    module_id: Attribute.String;
+    lms_lessons: Attribute.Relation<
+      'api::lms-module.lms-module',
+      'oneToMany',
+      'api::lms-lesson.lms-lesson'
+    >;
+    lms_course: Attribute.Relation<
+      'api::lms-module.lms-module',
+      'oneToOne',
+      'api::lms-course.lms-course'
+    >;
+    module_name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-module.lms-module',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-module.lms-module',
       'oneToOne',
       'admin::user'
     > &
@@ -1205,6 +1367,41 @@ export interface ApiLmsQuestionLmsQuestion extends Schema.CollectionType {
   };
 }
 
+export interface ApiLmsTechnologyLmsTechnology extends Schema.CollectionType {
+  collectionName: 'lms_technologies';
+  info: {
+    singularName: 'lms-technology';
+    pluralName: 'lms-technologies';
+    displayName: 'lms-technology';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    technology: Attribute.String;
+    lms_mentors: Attribute.Relation<
+      'api::lms-technology.lms-technology',
+      'manyToMany',
+      'api::lms-mentor.lms-mentor'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-technology.lms-technology',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-technology.lms-technology',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLmsUserLmsUser extends Schema.CollectionType {
   collectionName: 'lms_users';
   info: {
@@ -1226,6 +1423,35 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
     profilePicture: Attribute.Media;
     userid: Attribute.UID;
     points: Attribute.BigInteger;
+    lms_certificate: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'oneToOne',
+      'api::lms-certificate.lms-certificate'
+    >;
+    lms_message: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'oneToOne',
+      'api::lms-message.lms-message'
+    >;
+    lms_user_courses: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'oneToMany',
+      'api::lms-user-course.lms-user-course'
+    >;
+    birth: Attribute.Date;
+    street_name: Attribute.String;
+    postal_code: Attribute.String;
+    city: Attribute.String;
+    country: Attribute.String;
+    province: Attribute.String;
+    phone: Attribute.String;
+    CV: Attribute.Media;
+    interests: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'oneToMany',
+      'api::interest.interest'
+    >;
+    academic_qualifications: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1911,10 +2137,15 @@ declare module '@strapi/types' {
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::financial-support.financial-support': ApiFinancialSupportFinancialSupport;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::interest.interest': ApiInterestInterest;
+      'api::lms-certificate.lms-certificate': ApiLmsCertificateLmsCertificate;
       'api::lms-course.lms-course': ApiLmsCourseLmsCourse;
       'api::lms-lesson.lms-lesson': ApiLmsLessonLmsLesson;
       'api::lms-mentor.lms-mentor': ApiLmsMentorLmsMentor;
+      'api::lms-message.lms-message': ApiLmsMessageLmsMessage;
+      'api::lms-module.lms-module': ApiLmsModuleLmsModule;
       'api::lms-question.lms-question': ApiLmsQuestionLmsQuestion;
+      'api::lms-technology.lms-technology': ApiLmsTechnologyLmsTechnology;
       'api::lms-user.lms-user': ApiLmsUserLmsUser;
       'api::lms-user-course.lms-user-course': ApiLmsUserCourseLmsUserCourse;
       'api::mentor.mentor': ApiMentorMentor;

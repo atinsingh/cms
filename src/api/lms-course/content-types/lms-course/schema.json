@@ -40,6 +40,21 @@
     },
     "end_date": {
       "type": "datetime"
+    },
+    "lms_module": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-module.lms-module",
+      "mappedBy": "lms_course"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "duration": {
+      "type": "string"
     }
   }
 }
