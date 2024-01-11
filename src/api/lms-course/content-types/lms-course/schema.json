@@ -55,6 +55,11 @@
     },
     "duration": {
       "type": "string"
+    },
+    "lms_quizs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quiz.quiz"
     }
   }
 }
