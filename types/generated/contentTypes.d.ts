@@ -1148,6 +1148,11 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
     description: Attribute.Text;
     price: Attribute.Decimal;
     duration: Attribute.String;
+    lms_quizs: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'oneToMany',
+      'api::quiz.quiz'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1564,19 +1569,19 @@ export interface ApiMentorMentor extends Schema.CollectionType {
   };
 }
 
-export interface ApiNewsPageNewsPage extends Schema.SingleType {
+export interface ApiNewsPageNewsPage extends Schema.CollectionType {
   collectionName: 'news_pages';
   info: {
     singularName: 'news-page';
     pluralName: 'news-pages';
-    displayName: 'NewsPage';
+    displayName: 'newsPage';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    newsData: Attribute.Component<'map-json.news-json', true>;
+    newsData: Attribute.Component<'map-json.news-json'>;
     SeoNews: Attribute.Component<'seo.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

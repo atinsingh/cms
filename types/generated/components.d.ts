@@ -420,6 +420,7 @@ export interface MapJsonNewsJson extends Schema.Component {
     newsTitle: Attribute.Text;
     newsImage: Attribute.Media;
     authorImage: Attribute.Media;
+    shortDescription: Attribute.Text;
   };
 }
 
