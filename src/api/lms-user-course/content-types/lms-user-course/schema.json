@@ -64,6 +64,11 @@
     },
     "end_date": {
       "type": "datetime"
+    },
+    "lms_course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-course.lms-course"
     }
   }
 }
