@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_budges",
+  "info": {
+    "singularName": "lms-budge",
+    "pluralName": "lms-budges",
+    "displayName": "lms-budge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_ID": {
+      "type": "string"
+    },
+    "badge_name": {
+      "type": "string"
+    },
+    "badge_url": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "lms_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lms-user.lms-user",
+      "inversedBy": "lms_budges"
+    }
+  }
+}

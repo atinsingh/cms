@@ -104,6 +104,12 @@
     },
     "academic_qualifications": {
       "type": "text"
+    },
+    "lms_budges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-budge.lms-budge",
+      "mappedBy": "lms_user"
     }
   }
 }

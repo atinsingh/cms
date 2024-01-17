@@ -1075,6 +1075,45 @@ export interface ApiInterestInterest extends Schema.CollectionType {
   };
 }
 
+export interface ApiLmsBudgeLmsBudge extends Schema.CollectionType {
+  collectionName: 'lms_budges';
+  info: {
+    singularName: 'lms-budge';
+    pluralName: 'lms-budges';
+    displayName: 'lms-budge';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    user_ID: Attribute.String;
+    badge_name: Attribute.String;
+    badge_url: Attribute.String;
+    picture: Attribute.Media;
+    lms_user: Attribute.Relation<
+      'api::lms-budge.lms-budge',
+      'manyToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-budge.lms-budge',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-budge.lms-budge',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
   collectionName: 'lms_certificates';
   info: {
@@ -1457,6 +1496,11 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'api::interest.interest'
     >;
     academic_qualifications: Attribute.Text;
+    lms_budges: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'oneToMany',
+      'api::lms-budge.lms-budge'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2143,6 +2187,7 @@ declare module '@strapi/types' {
       'api::financial-support.financial-support': ApiFinancialSupportFinancialSupport;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::interest.interest': ApiInterestInterest;
+      'api::lms-budge.lms-budge': ApiLmsBudgeLmsBudge;
       'api::lms-certificate.lms-certificate': ApiLmsCertificateLmsCertificate;
       'api::lms-course.lms-course': ApiLmsCourseLmsCourse;
       'api::lms-lesson.lms-lesson': ApiLmsLessonLmsLesson;
