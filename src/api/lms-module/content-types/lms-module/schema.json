@@ -19,12 +19,6 @@
       "relation": "oneToMany",
       "target": "api::lms-lesson.lms-lesson"
     },
-    "lms_course": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lms-course.lms-course",
-      "inversedBy": "lms_module"
-    },
     "module_name": {
       "type": "string"
     }
