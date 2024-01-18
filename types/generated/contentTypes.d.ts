@@ -1179,9 +1179,9 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
     course_id: Attribute.UID;
     start_date: Attribute.DateTime;
     end_date: Attribute.DateTime;
-    lms_module: Attribute.Relation<
+    lms_modules: Attribute.Relation<
       'api::lms-course.lms-course',
-      'oneToOne',
+      'oneToMany',
       'api::lms-module.lms-module'
     >;
     description: Attribute.Text;
@@ -1343,11 +1343,6 @@ export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
       'api::lms-module.lms-module',
       'oneToMany',
       'api::lms-lesson.lms-lesson'
-    >;
-    lms_course: Attribute.Relation<
-      'api::lms-module.lms-module',
-      'oneToOne',
-      'api::lms-course.lms-course'
     >;
     module_name: Attribute.String;
     createdAt: Attribute.DateTime;
@@ -1552,6 +1547,11 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
     user_coruse_id: Attribute.UID;
     start_date: Attribute.DateTime;
     end_date: Attribute.DateTime;
+    lms_course: Attribute.Relation<
+      'api::lms-user-course.lms-user-course',
+      'oneToOne',
+      'api::lms-course.lms-course'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

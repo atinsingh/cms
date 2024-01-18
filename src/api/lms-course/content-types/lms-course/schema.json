@@ -41,11 +41,10 @@
     "end_date": {
       "type": "datetime"
     },
-    "lms_module": {
+    "lms_modules": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lms-module.lms-module",
-      "mappedBy": "lms_course"
+      "relation": "oneToMany",
+      "target": "api::lms-module.lms-module"
     },
     "description": {
       "type": "text"
