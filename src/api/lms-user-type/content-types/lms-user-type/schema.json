@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_user_types",
+  "info": {
+    "singularName": "lms-user-type",
+    "pluralName": "lms-user-types",
+    "displayName": "lms-user-type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "lms_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-user.lms-user",
+      "mappedBy": "lms_user_type"
+    },
+    "lms_mentors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-mentor.lms-mentor",
+      "mappedBy": "lms_user_type"
+    }
+  }
+}

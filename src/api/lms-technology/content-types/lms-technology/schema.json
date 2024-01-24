@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-technology",
     "pluralName": "lms-technologies",
-    "displayName": "lms-technology"
+    "displayName": "lms-technology",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::lms-mentor.lms-mentor",
+      "inversedBy": "lms_technologies"
+    },
+    "lms_course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lms-course.lms-course",
       "inversedBy": "lms_technologies"
     }
   }

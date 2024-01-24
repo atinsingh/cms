@@ -1192,6 +1192,11 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'oneToMany',
       'api::quiz.quiz'
     >;
+    lms_technologies: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'oneToMany',
+      'api::lms-technology.lms-technology'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1254,6 +1259,7 @@ export interface ApiLmsMentorLmsMentor extends Schema.CollectionType {
     singularName: 'lms-mentor';
     pluralName: 'lms-mentors';
     displayName: 'lms-mentor';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1273,6 +1279,13 @@ export interface ApiLmsMentorLmsMentor extends Schema.CollectionType {
       'manyToMany',
       'api::lms-technology.lms-technology'
     >;
+    lms_user_type: Attribute.Relation<
+      'api::lms-mentor.lms-mentor',
+      'manyToOne',
+      'api::lms-user-type.lms-user-type'
+    >;
+    uid: Attribute.Text;
+    email: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1412,6 +1425,7 @@ export interface ApiLmsTechnologyLmsTechnology extends Schema.CollectionType {
     singularName: 'lms-technology';
     pluralName: 'lms-technologies';
     displayName: 'lms-technology';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1422,6 +1436,11 @@ export interface ApiLmsTechnologyLmsTechnology extends Schema.CollectionType {
       'api::lms-technology.lms-technology',
       'manyToMany',
       'api::lms-mentor.lms-mentor'
+    >;
+    lms_course: Attribute.Relation<
+      'api::lms-technology.lms-technology',
+      'manyToOne',
+      'api::lms-course.lms-course'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1496,6 +1515,11 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'oneToMany',
       'api::lms-budge.lms-budge'
     >;
+    lms_user_type: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'manyToOne',
+      'api::lms-user-type.lms-user-type'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1528,7 +1552,7 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
   attributes: {
     user_ID: Attribute.String;
     courseID: Attribute.String;
-    finish: Attribute.Boolean;
+    finish: Attribute.Boolean & Attribute.DefaultTo<false>;
     lesson1: Attribute.Boolean;
     lesson2: Attribute.Boolean;
     lesson3: Attribute.Boolean;
@@ -1563,6 +1587,46 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-user-course.lms-user-course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsUserTypeLmsUserType extends Schema.CollectionType {
+  collectionName: 'lms_user_types';
+  info: {
+    singularName: 'lms-user-type';
+    pluralName: 'lms-user-types';
+    displayName: 'lms-user-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    type: Attribute.String;
+    lms_users: Attribute.Relation<
+      'api::lms-user-type.lms-user-type',
+      'oneToMany',
+      'api::lms-user.lms-user'
+    >;
+    lms_mentors: Attribute.Relation<
+      'api::lms-user-type.lms-user-type',
+      'oneToMany',
+      'api::lms-mentor.lms-mentor'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-user-type.lms-user-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-user-type.lms-user-type',
       'oneToOne',
       'admin::user'
     > &
@@ -2000,6 +2064,7 @@ export interface ApiSuccessStoriesPageSuccessStoriesPage
     SeoSuccess: Attribute.Component<'seo.seo'>;
     ClientReviews: Attribute.Component<'public.success-reviews', true>;
     reviewTestimonial: Attribute.Component<'public.review-testimonial', true>;
+    StudentReviewedVideo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2198,6 +2263,7 @@ declare module '@strapi/types' {
       'api::lms-technology.lms-technology': ApiLmsTechnologyLmsTechnology;
       'api::lms-user.lms-user': ApiLmsUserLmsUser;
       'api::lms-user-course.lms-user-course': ApiLmsUserCourseLmsUserCourse;
+      'api::lms-user-type.lms-user-type': ApiLmsUserTypeLmsUserType;
       'api::mentor.mentor': ApiMentorMentor;
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::quiz.quiz': ApiQuizQuiz;

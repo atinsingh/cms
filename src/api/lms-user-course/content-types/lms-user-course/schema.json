@@ -19,7 +19,8 @@
       "type": "string"
     },
     "finish": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "lesson1": {
       "type": "boolean"

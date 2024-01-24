@@ -110,6 +110,12 @@
       "relation": "oneToMany",
       "target": "api::lms-budge.lms-budge",
       "mappedBy": "lms_user"
+    },
+    "lms_user_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lms-user-type.lms-user-type",
+      "inversedBy": "lms_users"
     }
   }
 }

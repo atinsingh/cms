@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-mentor",
     "pluralName": "lms-mentors",
-    "displayName": "lms-mentor"
+    "displayName": "lms-mentor",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,14 +22,15 @@
       "type": "uid"
     },
     "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "lms_courses": {
       "type": "relation",
@@ -41,6 +43,18 @@
       "relation": "manyToMany",
       "target": "api::lms-technology.lms-technology",
       "mappedBy": "lms_mentors"
+    },
+    "lms_user_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lms-user-type.lms-user-type",
+      "inversedBy": "lms_mentors"
+    },
+    "uid": {
+      "type": "text"
+    },
+    "email": {
+      "type": "string"
     }
   }
 }
