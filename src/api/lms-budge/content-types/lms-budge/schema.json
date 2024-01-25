@@ -32,9 +32,9 @@
         "audios"
       ]
     },
-    "lms_user": {
+    "lms_users": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::lms-user.lms-user",
       "inversedBy": "lms_budges"
     }

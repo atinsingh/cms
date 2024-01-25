@@ -1091,9 +1091,9 @@ export interface ApiLmsBudgeLmsBudge extends Schema.CollectionType {
     badge_name: Attribute.String;
     badge_url: Attribute.String;
     picture: Attribute.Media;
-    lms_user: Attribute.Relation<
+    lms_users: Attribute.Relation<
       'api::lms-budge.lms-budge',
-      'manyToOne',
+      'manyToMany',
       'api::lms-user.lms-user'
     >;
     createdAt: Attribute.DateTime;
@@ -1510,15 +1510,15 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'api::interest.interest'
     >;
     academic_qualifications: Attribute.Text;
-    lms_budges: Attribute.Relation<
-      'api::lms-user.lms-user',
-      'oneToMany',
-      'api::lms-budge.lms-budge'
-    >;
     lms_user_type: Attribute.Relation<
       'api::lms-user.lms-user',
       'manyToOne',
       'api::lms-user-type.lms-user-type'
+    >;
+    lms_budges: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'manyToMany',
+      'api::lms-budge.lms-budge'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
