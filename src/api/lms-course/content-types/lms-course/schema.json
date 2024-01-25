@@ -59,6 +59,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::quiz.quiz"
+    },
+    "lms_technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-technology.lms-technology",
+      "mappedBy": "lms_course"
     }
   }
 }
