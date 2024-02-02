@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_uploads_resume_data",
+  "info": {
+    "displayName": "resumeData"
+  },
+  "options": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "appliedDate": {
+      "type": "datetime"
+    },
+    "resume": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "phone": {
+      "type": "integer"
+    }
+  }
+}

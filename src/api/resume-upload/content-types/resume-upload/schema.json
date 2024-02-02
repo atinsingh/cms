@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resume_uploads",
+  "info": {
+    "singularName": "resume-upload",
+    "pluralName": "resume-uploads",
+    "displayName": "resumeUpload",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "resume": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "country": {
+      "type": "string"
+    },
+    "tenthPercentage": {
+      "type": "string"
+    },
+    "twelvethPercentage": {
+      "type": "string"
+    },
+    "highestQualification": {
+      "type": "string"
+    },
+    "graduationPercentage": {
+      "type": "string"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "collegeName": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "graduationYear": {
+      "type": "string"
+    }
+  }
+}
