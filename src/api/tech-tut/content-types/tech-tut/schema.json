@@ -67,6 +67,25 @@
         "videos",
         "audios"
       ]
+    },
+    "author": {
+      "type": "string"
+    },
+    "authorImageUrl": {
+      "type": "text"
+    },
+    "authorImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "position": {
+      "type": "string"
     }
   }
 }
