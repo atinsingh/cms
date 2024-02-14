@@ -23,7 +23,6 @@ export interface AdminPermission extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    actionParameters: Attribute.JSON & Attribute.DefaultTo<{}>;
     subject: Attribute.String &
       Attribute.SetMinMaxLength<{
         minLength: 1;
@@ -475,97 +474,6 @@ export interface PluginUploadFolder extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::upload.folder',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface PluginContentReleasesRelease extends Schema.CollectionType {
-  collectionName: 'strapi_releases';
-  info: {
-    singularName: 'release';
-    pluralName: 'releases';
-    displayName: 'Release';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    releasedAt: Attribute.DateTime;
-    actions: Attribute.Relation<
-      'plugin::content-releases.release',
-      'oneToMany',
-      'plugin::content-releases.release-action'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::content-releases.release',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::content-releases.release',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface PluginContentReleasesReleaseAction
-  extends Schema.CollectionType {
-  collectionName: 'strapi_release_actions';
-  info: {
-    singularName: 'release-action';
-    pluralName: 'release-actions';
-    displayName: 'Release Action';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    type: Attribute.Enumeration<['publish', 'unpublish']> & Attribute.Required;
-    entry: Attribute.Relation<
-      'plugin::content-releases.release-action',
-      'morphToOne'
-    >;
-    contentType: Attribute.String & Attribute.Required;
-    release: Attribute.Relation<
-      'plugin::content-releases.release-action',
-      'manyToOne',
-      'plugin::content-releases.release'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::content-releases.release-action',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::content-releases.release-action',
       'oneToOne',
       'admin::user'
     > &
@@ -1772,6 +1680,50 @@ export interface ApiReskillPageReskillPage extends Schema.SingleType {
   };
 }
 
+export interface ApiResumeUploadResumeUpload extends Schema.CollectionType {
+  collectionName: 'resume_uploads';
+  info: {
+    singularName: 'resume-upload';
+    pluralName: 'resume-uploads';
+    displayName: 'resumeUpload';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    firstName: Attribute.String;
+    lastName: Attribute.String;
+    email: Attribute.Email;
+    phone: Attribute.BigInteger;
+    resume: Attribute.Media;
+    country: Attribute.String;
+    tenthPercentage: Attribute.String;
+    twelvethPercentage: Attribute.String;
+    highestQualification: Attribute.String;
+    graduationPercentage: Attribute.String;
+    createdDate: Attribute.String;
+    collegeName: Attribute.String;
+    state: Attribute.String;
+    graduationYear: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resume-upload.resume-upload',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resume-upload.resume-upload',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiScheduleDemoScheduleDemo extends Schema.CollectionType {
   collectionName: 'schedule_demos';
   info: {
@@ -2144,6 +2096,12 @@ export interface ApiTechTutTechTut extends Schema.CollectionType {
     images: Attribute.Media;
     coverphoto: Attribute.Media;
     thumbnail: Attribute.Media;
+    author: Attribute.String;
+    authorImageUrl: Attribute.Text;
+    authorImage: Attribute.Media;
+    position: Attribute.String;
+    buttonText: Attribute.String;
+    tags: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2225,7 +2183,7 @@ export interface ApiTutorialPageTutorialPage extends Schema.CollectionType {
   };
 }
 
-declare module '@strapi/types' {
+declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
       'admin::permission': AdminPermission;
@@ -2237,8 +2195,6 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
-      'plugin::content-releases.release': PluginContentReleasesRelease;
-      'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
@@ -2268,6 +2224,7 @@ declare module '@strapi/types' {
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::quiz.quiz': ApiQuizQuiz;
       'api::reskill-page.reskill-page': ApiReskillPageReskillPage;
+      'api::resume-upload.resume-upload': ApiResumeUploadResumeUpload;
       'api::schedule-demo.schedule-demo': ApiScheduleDemoScheduleDemo;
       'api::seo-about.seo-about': ApiSeoAboutSeoAbout;
       'api::seperate-blog.seperate-blog': ApiSeperateBlogSeperateBlog;

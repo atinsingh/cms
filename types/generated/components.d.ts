@@ -584,7 +584,22 @@ export interface SeoSeo extends Schema.Component {
   };
 }
 
-declare module '@strapi/types' {
+export interface UploadsResumeData extends Schema.Component {
+  collectionName: 'components_uploads_resume_data';
+  info: {
+    displayName: 'resumeData';
+  };
+  attributes: {
+    firstName: Attribute.String;
+    lastName: Attribute.String;
+    email: Attribute.Email;
+    appliedDate: Attribute.DateTime;
+    resume: Attribute.Media;
+    phone: Attribute.Integer;
+  };
+}
+
+declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
       'advantage.advantage-home': AdvantageAdvantageHome;
@@ -629,6 +644,7 @@ declare module '@strapi/types' {
       'schedule.duration': ScheduleDuration;
       'schedule.opportunities': ScheduleOpportunities;
       'seo.seo': SeoSeo;
+      'uploads.resume-data': UploadsResumeData;
     }
   }
 }
