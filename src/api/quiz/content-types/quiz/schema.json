@@ -23,6 +23,12 @@
       "relation": "oneToMany",
       "target": "api::lms-question.lms-question",
       "mappedBy": "lms_quiz"
+    },
+    "lms_module": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-module.lms-module",
+      "mappedBy": "lms_quiz"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-module",
     "pluralName": "lms-modules",
-    "displayName": "lms-module"
+    "displayName": "lms-module",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,17 @@
     },
     "module_name": {
       "type": "string"
+    },
+    "lms_quiz": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quiz.quiz",
+      "inversedBy": "lms_module"
+    },
+    "lms_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-user.lms-user"
     }
   }
 }

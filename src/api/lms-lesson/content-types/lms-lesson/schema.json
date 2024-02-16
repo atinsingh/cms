@@ -51,6 +51,11 @@
     },
     "lesson_id": {
       "type": "uid"
+    },
+    "lms_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-user.lms-user"
     }
   }
 }
