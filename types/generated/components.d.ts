@@ -447,6 +447,22 @@ export interface MapJsonStatsJson extends Schema.Component {
   };
 }
 
+export interface NotificationNotification extends Schema.Component {
+  collectionName: 'components_notification_notifications';
+  info: {
+    displayName: 'notification';
+  };
+  attributes: {
+    title: Attribute.String;
+    shortDescription: Attribute.String;
+    read: Attribute.Boolean;
+    createdDate: Attribute.Date & Attribute.Required;
+    notificationType: Attribute.Enumeration<
+      ['course', 'assignment', 'announcement', 'videos']
+    >;
+  };
+}
+
 export interface OurTeamTeam extends Schema.Component {
   collectionName: 'components_our_team_teams';
   info: {
@@ -634,6 +650,7 @@ declare module '@strapi/types' {
       'map-json.news-json': MapJsonNewsJson;
       'map-json.partner-json': MapJsonPartnerJson;
       'map-json.stats-json': MapJsonStatsJson;
+      'notification.notification': NotificationNotification;
       'our-team.team': OurTeamTeam;
       'partnerlogo.partners': PartnerlogoPartners;
       'public.review-testimonial': PublicReviewTestimonial;
