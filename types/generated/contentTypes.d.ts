@@ -1230,6 +1230,36 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
   };
 }
 
+export interface ApiLmsExampleLmsExample extends Schema.CollectionType {
+  collectionName: 'lms_examples';
+  info: {
+    singularName: 'lms-example';
+    pluralName: 'lms-examples';
+    displayName: 'lms-example';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    test_field: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-example.lms-example',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-example.lms-example',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLmsLessonLmsLesson extends Schema.CollectionType {
   collectionName: 'lms_lessons';
   info: {
@@ -2341,6 +2371,7 @@ declare module '@strapi/types' {
       'api::lms-budge.lms-budge': ApiLmsBudgeLmsBudge;
       'api::lms-certificate.lms-certificate': ApiLmsCertificateLmsCertificate;
       'api::lms-course.lms-course': ApiLmsCourseLmsCourse;
+      'api::lms-example.lms-example': ApiLmsExampleLmsExample;
       'api::lms-lesson.lms-lesson': ApiLmsLessonLmsLesson;
       'api::lms-mentor.lms-mentor': ApiLmsMentorLmsMentor;
       'api::lms-message.lms-message': ApiLmsMessageLmsMessage;
