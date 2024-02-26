@@ -29,6 +29,32 @@
       "relation": "oneToOne",
       "target": "api::lms-module.lms-module",
       "mappedBy": "lms_quiz"
+    },
+    "lms_quizz_score": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-quizz-score.lms-quizz-score",
+      "mappedBy": "lms_quiz"
+    },
+    "lms_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-user.lms-user"
+    },
+    "max_tries": {
+      "type": "integer"
+    },
+    "lms_quizz_trie": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-quizz-trie.lms-quizz-trie",
+      "mappedBy": "lms_quiz"
+    },
+    "lms_course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-course.lms-course",
+      "inversedBy": "lms_quiz"
     }
   }
 }

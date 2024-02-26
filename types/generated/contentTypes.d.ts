@@ -1212,6 +1212,11 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'oneToMany',
       'api::lms-technology.lms-technology'
     >;
+    lms_quiz: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'oneToOne',
+      'api::quiz.quiz'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1473,6 +1478,85 @@ export interface ApiLmsQuestionLmsQuestion extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-question.lms-question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsQuizzScoreLmsQuizzScore extends Schema.CollectionType {
+  collectionName: 'lms_quizz_scores';
+  info: {
+    singularName: 'lms-quizz-score';
+    pluralName: 'lms-quizz-scores';
+    displayName: 'lms-quizz-score';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    score: Attribute.Decimal;
+    lms_quiz: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'api::quiz.quiz'
+    >;
+    lms_user: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsQuizzTrieLmsQuizzTrie extends Schema.CollectionType {
+  collectionName: 'lms_quizz_tries';
+  info: {
+    singularName: 'lms-quizz-trie';
+    pluralName: 'lms-quizz-tries';
+    displayName: 'lms-quizz-trie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    lms_quiz: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
+      'oneToOne',
+      'api::quiz.quiz'
+    >;
+    lms_user: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
       'oneToOne',
       'admin::user'
     > &
@@ -1793,6 +1877,27 @@ export interface ApiQuizQuiz extends Schema.CollectionType {
       'api::quiz.quiz',
       'oneToOne',
       'api::lms-module.lms-module'
+    >;
+    lms_quizz_score: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-quizz-score.lms-quizz-score'
+    >;
+    lms_user: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    max_tries: Attribute.Integer;
+    lms_quizz_trie: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-quizz-trie.lms-quizz-trie'
+    >;
+    lms_course: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-course.lms-course'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -2377,6 +2482,8 @@ declare module '@strapi/types' {
       'api::lms-message.lms-message': ApiLmsMessageLmsMessage;
       'api::lms-module.lms-module': ApiLmsModuleLmsModule;
       'api::lms-question.lms-question': ApiLmsQuestionLmsQuestion;
+      'api::lms-quizz-score.lms-quizz-score': ApiLmsQuizzScoreLmsQuizzScore;
+      'api::lms-quizz-trie.lms-quizz-trie': ApiLmsQuizzTrieLmsQuizzTrie;
       'api::lms-technology.lms-technology': ApiLmsTechnologyLmsTechnology;
       'api::lms-user.lms-user': ApiLmsUserLmsUser;
       'api::lms-user-course.lms-user-course': ApiLmsUserCourseLmsUserCourse;
