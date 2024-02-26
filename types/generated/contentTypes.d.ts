@@ -23,6 +23,7 @@ export interface AdminPermission extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
+    actionParameters: Attribute.JSON & Attribute.DefaultTo<{}>;
     subject: Attribute.String &
       Attribute.SetMinMaxLength<{
         minLength: 1;
@@ -474,6 +475,97 @@ export interface PluginUploadFolder extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::upload.folder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface PluginContentReleasesRelease extends Schema.CollectionType {
+  collectionName: 'strapi_releases';
+  info: {
+    singularName: 'release';
+    pluralName: 'releases';
+    displayName: 'Release';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    releasedAt: Attribute.DateTime;
+    actions: Attribute.Relation<
+      'plugin::content-releases.release',
+      'oneToMany',
+      'plugin::content-releases.release-action'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::content-releases.release',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::content-releases.release',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface PluginContentReleasesReleaseAction
+  extends Schema.CollectionType {
+  collectionName: 'strapi_release_actions';
+  info: {
+    singularName: 'release-action';
+    pluralName: 'release-actions';
+    displayName: 'Release Action';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    type: Attribute.Enumeration<['publish', 'unpublish']> & Attribute.Required;
+    entry: Attribute.Relation<
+      'plugin::content-releases.release-action',
+      'morphToOne'
+    >;
+    contentType: Attribute.String & Attribute.Required;
+    release: Attribute.Relation<
+      'plugin::content-releases.release-action',
+      'manyToOne',
+      'plugin::content-releases.release'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::content-releases.release-action',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::content-releases.release-action',
       'oneToOne',
       'admin::user'
     > &
@@ -1105,6 +1197,11 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'oneToMany',
       'api::lms-technology.lms-technology'
     >;
+    lms_quiz: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'oneToOne',
+      'api::quiz.quiz'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1116,6 +1213,36 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-course.lms-course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsExampleLmsExample extends Schema.CollectionType {
+  collectionName: 'lms_examples';
+  info: {
+    singularName: 'lms-example';
+    pluralName: 'lms-examples';
+    displayName: 'lms-example';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    test_field: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-example.lms-example',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-example.lms-example',
       'oneToOne',
       'admin::user'
     > &
@@ -1143,6 +1270,11 @@ export interface ApiLmsLessonLmsLesson extends Schema.CollectionType {
     lesson_number: Attribute.Integer;
     finish: Attribute.Boolean;
     lesson_id: Attribute.UID;
+    lms_users: Attribute.Relation<
+      'api::lms-lesson.lms-lesson',
+      'oneToMany',
+      'api::lms-user.lms-user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1254,6 +1386,7 @@ export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
     singularName: 'lms-module';
     pluralName: 'lms-modules';
     displayName: 'lms-module';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1266,6 +1399,16 @@ export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
       'api::lms-lesson.lms-lesson'
     >;
     module_name: Attribute.String;
+    lms_quiz: Attribute.Relation<
+      'api::lms-module.lms-module',
+      'oneToOne',
+      'api::quiz.quiz'
+    >;
+    lms_users: Attribute.Relation<
+      'api::lms-module.lms-module',
+      'oneToMany',
+      'api::lms-user.lms-user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1277,6 +1420,39 @@ export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-module.lms-module',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsNotificationServiceLmsNotificationService
+  extends Schema.CollectionType {
+  collectionName: 'lms_notification_services';
+  info: {
+    singularName: 'lms-notification-service';
+    pluralName: 'lms-notification-services';
+    displayName: 'lms-notification-service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    addNotification: Attribute.Component<'notification.notification', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-notification-service.lms-notification-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-notification-service.lms-notification-service',
       'oneToOne',
       'admin::user'
     > &
@@ -1320,6 +1496,85 @@ export interface ApiLmsQuestionLmsQuestion extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-question.lms-question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsQuizzScoreLmsQuizzScore extends Schema.CollectionType {
+  collectionName: 'lms_quizz_scores';
+  info: {
+    singularName: 'lms-quizz-score';
+    pluralName: 'lms-quizz-scores';
+    displayName: 'lms-quizz-score';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    score: Attribute.Decimal;
+    lms_quiz: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'api::quiz.quiz'
+    >;
+    lms_user: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-quizz-score.lms-quizz-score',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsQuizzTrieLmsQuizzTrie extends Schema.CollectionType {
+  collectionName: 'lms_quizz_tries';
+  info: {
+    singularName: 'lms-quizz-trie';
+    pluralName: 'lms-quizz-tries';
+    displayName: 'lms-quizz-trie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    lms_quiz: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
+      'oneToOne',
+      'api::quiz.quiz'
+    >;
+    lms_user: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-quizz-trie.lms-quizz-trie',
       'oneToOne',
       'admin::user'
     > &
@@ -1484,6 +1739,11 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
       'oneToOne',
       'api::lms-course.lms-course'
     >;
+    lms_notification_services: Attribute.Relation<
+      'api::lms-user-course.lms-user-course',
+      'oneToMany',
+      'api::lms-notification-service.lms-notification-service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1635,6 +1895,32 @@ export interface ApiQuizQuiz extends Schema.CollectionType {
       'api::quiz.quiz',
       'oneToMany',
       'api::lms-question.lms-question'
+    >;
+    lms_module: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-module.lms-module'
+    >;
+    lms_quizz_score: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-quizz-score.lms-quizz-score'
+    >;
+    lms_user: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-user.lms-user'
+    >;
+    max_tries: Attribute.Integer;
+    lms_quizz_trie: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-quizz-trie.lms-quizz-trie'
+    >;
+    lms_course: Attribute.Relation<
+      'api::quiz.quiz',
+      'oneToOne',
+      'api::lms-course.lms-course'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -2183,7 +2469,7 @@ export interface ApiTutorialPageTutorialPage extends Schema.CollectionType {
   };
 }
 
-declare module '@strapi/strapi' {
+declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
       'admin::permission': AdminPermission;
@@ -2195,6 +2481,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
+      'plugin::content-releases.release': PluginContentReleasesRelease;
+      'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
@@ -2211,11 +2499,15 @@ declare module '@strapi/strapi' {
       'api::lms-budge.lms-budge': ApiLmsBudgeLmsBudge;
       'api::lms-certificate.lms-certificate': ApiLmsCertificateLmsCertificate;
       'api::lms-course.lms-course': ApiLmsCourseLmsCourse;
+      'api::lms-example.lms-example': ApiLmsExampleLmsExample;
       'api::lms-lesson.lms-lesson': ApiLmsLessonLmsLesson;
       'api::lms-mentor.lms-mentor': ApiLmsMentorLmsMentor;
       'api::lms-message.lms-message': ApiLmsMessageLmsMessage;
       'api::lms-module.lms-module': ApiLmsModuleLmsModule;
+      'api::lms-notification-service.lms-notification-service': ApiLmsNotificationServiceLmsNotificationService;
       'api::lms-question.lms-question': ApiLmsQuestionLmsQuestion;
+      'api::lms-quizz-score.lms-quizz-score': ApiLmsQuizzScoreLmsQuizzScore;
+      'api::lms-quizz-trie.lms-quizz-trie': ApiLmsQuizzTrieLmsQuizzTrie;
       'api::lms-technology.lms-technology': ApiLmsTechnologyLmsTechnology;
       'api::lms-user.lms-user': ApiLmsUserLmsUser;
       'api::lms-user-course.lms-user-course': ApiLmsUserCourseLmsUserCourse;

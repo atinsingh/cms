@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_notification_notifications",
+  "info": {
+    "displayName": "notification"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "read": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    },
+    "notificationType": {
+      "type": "enumeration",
+      "enum": [
+        "course",
+        "assignment",
+        "announcement",
+        "videos"
+      ]
+    }
+  }
+}

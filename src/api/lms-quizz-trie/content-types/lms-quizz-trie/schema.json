@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_quizz_tries",
+  "info": {
+    "singularName": "lms-quizz-trie",
+    "pluralName": "lms-quizz-tries",
+    "displayName": "lms-quizz-trie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lms_quiz": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quiz.quiz",
+      "inversedBy": "lms_quizz_trie"
+    },
+    "lms_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-user.lms-user"
+    }
+  }
+}

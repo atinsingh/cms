@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_quizz_scores",
+  "info": {
+    "singularName": "lms-quizz-score",
+    "pluralName": "lms-quizz-scores",
+    "displayName": "lms-quizz-score"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "score": {
+      "type": "decimal"
+    },
+    "lms_quiz": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quiz.quiz",
+      "inversedBy": "lms_quizz_score"
+    },
+    "lms_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-user.lms-user"
+    }
+  }
+}
