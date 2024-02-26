@@ -403,12 +403,9 @@ export interface PluginUploadFile extends Schema.CollectionType {
     folderPath: Attribute.String &
       Attribute.Required &
       Attribute.Private &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -444,12 +441,9 @@ export interface PluginUploadFolder extends Schema.CollectionType {
   attributes: {
     name: Attribute.String &
       Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
     pathId: Attribute.Integer & Attribute.Required & Attribute.Unique;
     parent: Attribute.Relation<
       'plugin::upload.folder',
@@ -468,12 +462,9 @@ export interface PluginUploadFolder extends Schema.CollectionType {
     >;
     path: Attribute.String &
       Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -512,8 +503,6 @@ export interface PluginContentReleasesRelease extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     releasedAt: Attribute.DateTime;
-    scheduledAt: Attribute.DateTime;
-    timezone: Attribute.String;
     actions: Attribute.Relation<
       'plugin::content-releases.release',
       'oneToMany',
@@ -562,7 +551,6 @@ export interface PluginContentReleasesReleaseAction
       'morphToOne'
     >;
     contentType: Attribute.String & Attribute.Required;
-    locale: Attribute.String;
     release: Attribute.Relation<
       'plugin::content-releases.release-action',
       'manyToOne',
@@ -607,13 +595,10 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 50;
+      }>;
     code: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1442,6 +1427,39 @@ export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
   };
 }
 
+export interface ApiLmsNotificationServiceLmsNotificationService
+  extends Schema.CollectionType {
+  collectionName: 'lms_notification_services';
+  info: {
+    singularName: 'lms-notification-service';
+    pluralName: 'lms-notification-services';
+    displayName: 'lms-notification-service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    addNotification: Attribute.Component<'notification.notification', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-notification-service.lms-notification-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-notification-service.lms-notification-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLmsQuestionLmsQuestion extends Schema.CollectionType {
   collectionName: 'lms_questions';
   info: {
@@ -1720,6 +1738,11 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
       'api::lms-user-course.lms-user-course',
       'oneToOne',
       'api::lms-course.lms-course'
+    >;
+    lms_notification_services: Attribute.Relation<
+      'api::lms-user-course.lms-user-course',
+      'oneToMany',
+      'api::lms-notification-service.lms-notification-service'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -2481,6 +2504,7 @@ declare module '@strapi/types' {
       'api::lms-mentor.lms-mentor': ApiLmsMentorLmsMentor;
       'api::lms-message.lms-message': ApiLmsMessageLmsMessage;
       'api::lms-module.lms-module': ApiLmsModuleLmsModule;
+      'api::lms-notification-service.lms-notification-service': ApiLmsNotificationServiceLmsNotificationService;
       'api::lms-question.lms-question': ApiLmsQuestionLmsQuestion;
       'api::lms-quizz-score.lms-quizz-score': ApiLmsQuizzScoreLmsQuizzScore;
       'api::lms-quizz-trie.lms-quizz-trie': ApiLmsQuizzTrieLmsQuizzTrie;
