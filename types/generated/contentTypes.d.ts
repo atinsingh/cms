@@ -1683,6 +1683,11 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'manyToMany',
       'api::lms-budge.lms-budge'
     >;
+    lms_notification_services: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'oneToMany',
+      'api::lms-notification-service.lms-notification-service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1738,11 +1743,6 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
       'api::lms-user-course.lms-user-course',
       'oneToOne',
       'api::lms-course.lms-course'
-    >;
-    lms_notification_services: Attribute.Relation<
-      'api::lms-user-course.lms-user-course',
-      'oneToMany',
-      'api::lms-notification-service.lms-notification-service'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
