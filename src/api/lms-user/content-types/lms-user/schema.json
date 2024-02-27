@@ -116,6 +116,11 @@
       "relation": "manyToMany",
       "target": "api::lms-budge.lms-budge",
       "mappedBy": "lms_users"
+    },
+    "lms_notification_services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-notification-service.lms-notification-service"
     }
   }
 }
