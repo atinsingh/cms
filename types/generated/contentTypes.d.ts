@@ -1759,11 +1759,6 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
       'oneToOne',
       'api::lms-course.lms-course'
     >;
-    lms_notification_services: Attribute.Relation<
-      'api::lms-user-course.lms-user-course',
-      'oneToMany',
-      'api::lms-notification-service.lms-notification-service'
-    >;
     percentage: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
