@@ -451,6 +451,7 @@ export interface NotificationNotification extends Schema.Component {
   collectionName: 'components_notification_notifications';
   info: {
     displayName: 'notification';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -459,6 +460,18 @@ export interface NotificationNotification extends Schema.Component {
     createdDate: Attribute.Date & Attribute.Required;
     notificationType: Attribute.Enumeration<
       ['course', 'assignment', 'announcement', 'videos']
+    >;
+    specificCourses: Attribute.Enumeration<
+      [
+        'mern',
+        'java developer',
+        'business analysis',
+        'quality assurance',
+        'data analytics',
+        'data science',
+        'aws',
+        'devops'
+      ]
     >;
   };
 }
