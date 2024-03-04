@@ -1,7 +1,8 @@
 {
   "collectionName": "components_notification_notifications",
   "info": {
-    "displayName": "notification"
+    "displayName": "notification",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -25,6 +26,19 @@
         "assignment",
         "announcement",
         "videos"
+      ]
+    },
+    "specificCourses": {
+      "type": "enumeration",
+      "enum": [
+        "mern",
+        "java developer",
+        "business analysis",
+        "quality assurance",
+        "data analytics",
+        "data science",
+        "aws",
+        "devops"
       ]
     }
   }
