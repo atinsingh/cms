@@ -23,9 +23,13 @@
       "type": "enumeration",
       "enum": [
         "course",
+        "general",
         "assignment",
-        "announcement",
-        "videos"
+        "test",
+        "videos",
+        "certification",
+        "badges",
+        "points"
       ]
     },
     "specificCourses": {
@@ -38,7 +42,8 @@
         "data analytics",
         "data science",
         "aws",
-        "devops"
+        "devops",
+        "salesforce"
       ]
     }
   }
