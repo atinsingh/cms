@@ -459,7 +459,16 @@ export interface NotificationNotification extends Schema.Component {
     read: Attribute.Boolean;
     createdDate: Attribute.Date & Attribute.Required;
     notificationType: Attribute.Enumeration<
-      ['course', 'assignment', 'announcement', 'videos']
+      [
+        'course',
+        'general',
+        'assignment',
+        'test',
+        'videos',
+        'certification',
+        'badges',
+        'points'
+      ]
     >;
     specificCourses: Attribute.Enumeration<
       [
@@ -470,7 +479,8 @@ export interface NotificationNotification extends Schema.Component {
         'data analytics',
         'data science',
         'aws',
-        'devops'
+        'devops',
+        'salesforce'
       ]
     >;
   };
