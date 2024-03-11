@@ -56,6 +56,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::lms-user.lms-user"
+    },
+    "duration": {
+      "type": "integer"
     }
   }
 }
