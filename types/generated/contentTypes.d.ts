@@ -1290,6 +1290,7 @@ export interface ApiLmsLessonLmsLesson extends Schema.CollectionType {
       'oneToMany',
       'api::lms-user.lms-user'
     >;
+    duration: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1424,6 +1425,7 @@ export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
       'oneToMany',
       'api::lms-user.lms-user'
     >;
+    duration: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
