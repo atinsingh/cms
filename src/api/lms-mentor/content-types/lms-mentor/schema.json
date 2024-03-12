@@ -55,6 +55,9 @@
     },
     "email": {
       "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

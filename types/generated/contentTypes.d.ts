@@ -1217,9 +1217,9 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'oneToOne',
       'api::quiz.quiz'
     >;
-    lms_course_image: Attribute.Relation<
+    lms_course_images: Attribute.Relation<
       'api::lms-course.lms-course',
-      'oneToOne',
+      'manyToMany',
       'api::lms-course-image.lms-course-image'
     >;
     createdAt: Attribute.DateTime;
@@ -1246,15 +1246,16 @@ export interface ApiLmsCourseImageLmsCourseImage extends Schema.CollectionType {
     singularName: 'lms-course-image';
     pluralName: 'lms-course-images';
     displayName: 'lms-course-image';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     course_image: Attribute.Media;
-    lms_course: Attribute.Relation<
+    lms_courses: Attribute.Relation<
       'api::lms-course-image.lms-course-image',
-      'oneToOne',
+      'manyToMany',
       'api::lms-course.lms-course'
     >;
     createdAt: Attribute.DateTime;
@@ -1382,6 +1383,7 @@ export interface ApiLmsMentorLmsMentor extends Schema.CollectionType {
     >;
     uid: Attribute.Text;
     email: Attribute.String;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-course-image",
     "pluralName": "lms-course-images",
-    "displayName": "lms-course-image"
+    "displayName": "lms-course-image",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,20 +13,21 @@
   "pluginOptions": {},
   "attributes": {
     "course_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "lms_course": {
+    "lms_courses": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToMany",
       "target": "api::lms-course.lms-course",
-      "inversedBy": "lms_course_image"
+      "inversedBy": "lms_course_images"
     }
   }
 }
