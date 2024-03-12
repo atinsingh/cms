@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_course_images",
+  "info": {
+    "singularName": "lms-course-image",
+    "pluralName": "lms-course-images",
+    "displayName": "lms-course-image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "lms_course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lms-course.lms-course",
+      "inversedBy": "lms_course_image"
+    }
+  }
+}

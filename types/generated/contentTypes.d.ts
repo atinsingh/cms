@@ -1217,6 +1217,11 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'oneToOne',
       'api::quiz.quiz'
     >;
+    lms_course_image: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'oneToOne',
+      'api::lms-course-image.lms-course-image'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1228,6 +1233,41 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-course.lms-course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsCourseImageLmsCourseImage extends Schema.CollectionType {
+  collectionName: 'lms_course_images';
+  info: {
+    singularName: 'lms-course-image';
+    pluralName: 'lms-course-images';
+    displayName: 'lms-course-image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    course_image: Attribute.Media;
+    lms_course: Attribute.Relation<
+      'api::lms-course-image.lms-course-image',
+      'oneToOne',
+      'api::lms-course.lms-course'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-course-image.lms-course-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-course-image.lms-course-image',
       'oneToOne',
       'admin::user'
     > &
@@ -2517,6 +2557,7 @@ declare module '@strapi/types' {
       'api::lms-budge.lms-budge': ApiLmsBudgeLmsBudge;
       'api::lms-certificate.lms-certificate': ApiLmsCertificateLmsCertificate;
       'api::lms-course.lms-course': ApiLmsCourseLmsCourse;
+      'api::lms-course-image.lms-course-image': ApiLmsCourseImageLmsCourseImage;
       'api::lms-example.lms-example': ApiLmsExampleLmsExample;
       'api::lms-lesson.lms-lesson': ApiLmsLessonLmsLesson;
       'api::lms-mentor.lms-mentor': ApiLmsMentorLmsMentor;
