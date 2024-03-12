@@ -72,11 +72,11 @@
       "target": "api::quiz.quiz",
       "mappedBy": "lms_course"
     },
-    "lms_course_image": {
+    "lms_course_images": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToMany",
       "target": "api::lms-course-image.lms-course-image",
-      "mappedBy": "lms_course"
+      "mappedBy": "lms_courses"
     }
   }
 }
