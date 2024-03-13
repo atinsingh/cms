@@ -1222,6 +1222,7 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'manyToMany',
       'api::lms-course-image.lms-course-image'
     >;
+    imageUrl: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
