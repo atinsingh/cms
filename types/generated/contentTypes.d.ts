@@ -1135,6 +1135,7 @@ export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
     singularName: 'lms-certificate';
     pluralName: 'lms-certificates';
     displayName: 'lms-certificate';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1143,11 +1144,7 @@ export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
     user_ID: Attribute.String;
     technology: Attribute.String;
     certificate_name: Attribute.String;
-    lms_user: Attribute.Relation<
-      'api::lms-certificate.lms-certificate',
-      'oneToOne',
-      'api::lms-user.lms-user'
-    >;
+    certificate: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1704,9 +1701,9 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
     profilePicture: Attribute.Media;
     userid: Attribute.UID;
     points: Attribute.BigInteger;
-    lms_certificate: Attribute.Relation<
+    lms_certificates: Attribute.Relation<
       'api::lms-user.lms-user',
-      'oneToOne',
+      'oneToMany',
       'api::lms-certificate.lms-certificate'
     >;
     lms_message: Attribute.Relation<

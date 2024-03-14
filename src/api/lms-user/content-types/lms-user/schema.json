@@ -47,11 +47,10 @@
     "points": {
       "type": "biginteger"
     },
-    "lms_certificate": {
+    "lms_certificates": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lms-certificate.lms-certificate",
-      "mappedBy": "lms_user"
+      "relation": "oneToMany",
+      "target": "api::lms-certificate.lms-certificate"
     },
     "lms_message": {
       "type": "relation",
