@@ -1111,6 +1111,7 @@ export interface ApiLmsBudgeLmsBudge extends Schema.CollectionType {
       'manyToMany',
       'api::lms-user.lms-user'
     >;
+    type: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
