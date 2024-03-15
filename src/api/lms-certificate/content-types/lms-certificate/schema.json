@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-certificate",
     "pluralName": "lms-certificates",
-    "displayName": "lms-certificate"
+    "displayName": "lms-certificate",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,11 +21,15 @@
     "certificate_name": {
       "type": "string"
     },
-    "lms_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lms-user.lms-user",
-      "inversedBy": "lms_certificate"
+    "certificate": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
