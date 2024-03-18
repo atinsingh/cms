@@ -58,6 +58,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "ratings": {
+      "type": "decimal"
     }
   }
 }
