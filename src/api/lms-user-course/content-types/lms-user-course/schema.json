@@ -73,6 +73,12 @@
     },
     "percentage": {
       "type": "decimal"
+    },
+    "name": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
     }
   }
 }

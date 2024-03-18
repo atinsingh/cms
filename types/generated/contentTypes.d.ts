@@ -1803,6 +1803,8 @@ export interface ApiLmsUserCourseLmsUserCourse extends Schema.CollectionType {
       'api::lms-course.lms-course'
     >;
     percentage: Attribute.Decimal;
+    name: Attribute.String;
+    imageUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
