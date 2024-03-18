@@ -1146,6 +1146,11 @@ export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
     technology: Attribute.String;
     certificate_name: Attribute.String;
     certificate: Attribute.Media;
+    lms_courses: Attribute.Relation<
+      'api::lms-certificate.lms-certificate',
+      'oneToMany',
+      'api::lms-course.lms-course'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1221,6 +1226,11 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'api::lms-course-image.lms-course-image'
     >;
     imageUrl: Attribute.Media;
+    lms_certificate: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'manyToOne',
+      'api::lms-certificate.lms-certificate'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1383,6 +1393,7 @@ export interface ApiLmsMentorLmsMentor extends Schema.CollectionType {
     uid: Attribute.Text;
     email: Attribute.String;
     description: Attribute.Text;
+    ratings: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

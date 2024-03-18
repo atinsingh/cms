@@ -22,14 +22,21 @@
       "type": "string"
     },
     "certificate": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "lms_courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lms-course.lms-course",
+      "mappedBy": "lms_certificate"
     }
   }
 }

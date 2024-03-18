@@ -88,6 +88,12 @@
         "videos",
         "audios"
       ]
+    },
+    "lms_certificate": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lms-certificate.lms-certificate",
+      "inversedBy": "lms_courses"
     }
   }
 }
