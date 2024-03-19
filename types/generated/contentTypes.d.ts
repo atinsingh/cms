@@ -1198,6 +1198,7 @@ export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
       'oneToMany',
       'api::lms-course.lms-course'
     >;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1560,6 +1561,7 @@ export interface ApiLmsNotificationLmsNotification
     singularName: 'lms-notification';
     pluralName: 'lms-notifications';
     displayName: 'lms-notification';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1573,6 +1575,7 @@ export interface ApiLmsNotificationLmsNotification
       'manyToOne',
       'api::lms-user.lms-user'
     >;
+    read: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "lms-notification",
     "pluralName": "lms-notifications",
-    "displayName": "lms-notification"
+    "displayName": "lms-notification",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,6 +26,9 @@
       "relation": "manyToOne",
       "target": "api::lms-user.lms-user",
       "inversedBy": "lms_notifications"
+    },
+    "read": {
+      "type": "boolean"
     }
   }
 }

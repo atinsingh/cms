@@ -37,6 +37,9 @@
       "relation": "oneToMany",
       "target": "api::lms-course.lms-course",
       "mappedBy": "lms_certificate"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
