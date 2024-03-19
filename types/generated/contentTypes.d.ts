@@ -818,6 +818,53 @@ export interface ApiAcceleratedprogramPageAcceleratedprogramPage
   };
 }
 
+export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
+  collectionName: 'announcements';
+  info: {
+    singularName: 'announcement';
+    pluralName: 'announcements';
+    displayName: 'lms-announcement';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    lms_course: Attribute.Relation<
+      'api::announcement.announcement',
+      'manyToOne',
+      'api::lms-course.lms-course'
+    >;
+    lms_mentor: Attribute.Relation<
+      'api::announcement.announcement',
+      'oneToOne',
+      'api::lms-mentor.lms-mentor'
+    >;
+    lms_users: Attribute.Relation<
+      'api::announcement.announcement',
+      'manyToMany',
+      'api::lms-user.lms-user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::announcement.announcement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::announcement.announcement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCareerpathPageCareerpathPage extends Schema.SingleType {
   collectionName: 'careerpath_pages';
   info: {
@@ -1151,6 +1198,7 @@ export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
       'oneToMany',
       'api::lms-course.lms-course'
     >;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1230,6 +1278,11 @@ export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
       'api::lms-course.lms-course',
       'manyToOne',
       'api::lms-certificate.lms-certificate'
+    >;
+    announcements: Attribute.Relation<
+      'api::lms-course.lms-course',
+      'oneToMany',
+      'api::announcement.announcement'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1394,6 +1447,11 @@ export interface ApiLmsMentorLmsMentor extends Schema.CollectionType {
     email: Attribute.String;
     description: Attribute.Text;
     ratings: Attribute.Decimal;
+    announcement: Attribute.Relation<
+      'api::lms-mentor.lms-mentor',
+      'oneToOne',
+      'api::announcement.announcement'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1489,6 +1547,46 @@ export interface ApiLmsModuleLmsModule extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lms-module.lms-module',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLmsNotificationLmsNotification
+  extends Schema.CollectionType {
+  collectionName: 'lms_notifications';
+  info: {
+    singularName: 'lms-notification';
+    pluralName: 'lms-notifications';
+    displayName: 'lms-notification';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    type: Attribute.String;
+    lms_user: Attribute.Relation<
+      'api::lms-notification.lms-notification',
+      'manyToOne',
+      'api::lms-user.lms-user'
+    >;
+    read: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-notification.lms-notification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-notification.lms-notification',
       'oneToOne',
       'admin::user'
     > &
@@ -1756,6 +1854,16 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'api::lms-user.lms-user',
       'oneToMany',
       'api::lms-notification-service.lms-notification-service'
+    >;
+    announcements: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'manyToMany',
+      'api::announcement.announcement'
+    >;
+    lms_notifications: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'oneToMany',
+      'api::lms-notification.lms-notification'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -2560,6 +2668,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::acceleratedprogram-page.acceleratedprogram-page': ApiAcceleratedprogramPageAcceleratedprogramPage;
+      'api::announcement.announcement': ApiAnnouncementAnnouncement;
       'api::careerpath-page.careerpath-page': ApiCareerpathPageCareerpathPage;
       'api::cloud-service-page.cloud-service-page': ApiCloudServicePageCloudServicePage;
       'api::company-career-page.company-career-page': ApiCompanyCareerPageCompanyCareerPage;
@@ -2577,6 +2686,7 @@ declare module '@strapi/types' {
       'api::lms-mentor.lms-mentor': ApiLmsMentorLmsMentor;
       'api::lms-message.lms-message': ApiLmsMessageLmsMessage;
       'api::lms-module.lms-module': ApiLmsModuleLmsModule;
+      'api::lms-notification.lms-notification': ApiLmsNotificationLmsNotification;
       'api::lms-notification-service.lms-notification-service': ApiLmsNotificationServiceLmsNotificationService;
       'api::lms-question.lms-question': ApiLmsQuestionLmsQuestion;
       'api::lms-quizz-score.lms-quizz-score': ApiLmsQuizzScoreLmsQuizzScore;

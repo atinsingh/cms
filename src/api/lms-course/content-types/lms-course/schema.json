@@ -94,6 +94,12 @@
       "relation": "manyToOne",
       "target": "api::lms-certificate.lms-certificate",
       "inversedBy": "lms_courses"
+    },
+    "announcements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::announcement.announcement",
+      "mappedBy": "lms_course"
     }
   }
 }
