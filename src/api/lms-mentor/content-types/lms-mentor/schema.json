@@ -61,6 +61,12 @@
     },
     "ratings": {
       "type": "decimal"
+    },
+    "announcement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::announcement.announcement",
+      "mappedBy": "lms_mentor"
     }
   }
 }
