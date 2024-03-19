@@ -1394,6 +1394,8 @@ export interface ApiLmsLessonLmsLesson extends Schema.CollectionType {
       'api::lms-user.lms-user'
     >;
     duration: Attribute.Integer;
+    type: Attribute.String;
+    pdf: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
