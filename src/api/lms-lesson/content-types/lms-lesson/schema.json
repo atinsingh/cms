@@ -59,6 +59,19 @@
     },
     "duration": {
       "type": "integer"
+    },
+    "type": {
+      "type": "string"
+    },
+    "pdf": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
