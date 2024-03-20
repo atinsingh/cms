@@ -1217,6 +1217,46 @@ export interface ApiLmsCertificateLmsCertificate extends Schema.CollectionType {
   };
 }
 
+export interface ApiLmsConversationLmsConversation
+  extends Schema.CollectionType {
+  collectionName: 'lms_conversations';
+  info: {
+    singularName: 'lms-conversation';
+    pluralName: 'lms-conversations';
+    displayName: 'lms-conversation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    lms_users: Attribute.Relation<
+      'api::lms-conversation.lms-conversation',
+      'manyToMany',
+      'api::lms-user.lms-user'
+    >;
+    lms_messages: Attribute.Relation<
+      'api::lms-conversation.lms-conversation',
+      'manyToMany',
+      'api::lms-message.lms-message'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lms-conversation.lms-conversation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lms-conversation.lms-conversation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLmsCourseLmsCourse extends Schema.CollectionType {
   collectionName: 'lms_courses';
   info: {
@@ -1493,6 +1533,11 @@ export interface ApiLmsMessageLmsMessage extends Schema.CollectionType {
     >;
     to: Attribute.String;
     message: Attribute.String;
+    lms_conversations: Attribute.Relation<
+      'api::lms-message.lms-message',
+      'manyToMany',
+      'api::lms-conversation.lms-conversation'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1869,6 +1914,11 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'api::lms-user.lms-user',
       'manyToMany',
       'api::lms-message.lms-message'
+    >;
+    lms_conversations: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'manyToMany',
+      'api::lms-conversation.lms-conversation'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -2684,6 +2734,7 @@ declare module '@strapi/types' {
       'api::interest.interest': ApiInterestInterest;
       'api::lms-budge.lms-budge': ApiLmsBudgeLmsBudge;
       'api::lms-certificate.lms-certificate': ApiLmsCertificateLmsCertificate;
+      'api::lms-conversation.lms-conversation': ApiLmsConversationLmsConversation;
       'api::lms-course.lms-course': ApiLmsCourseLmsCourse;
       'api::lms-course-image.lms-course-image': ApiLmsCourseImageLmsCourseImage;
       'api::lms-example.lms-example': ApiLmsExampleLmsExample;

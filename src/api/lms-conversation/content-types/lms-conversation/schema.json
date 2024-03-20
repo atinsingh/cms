@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lms_conversations",
+  "info": {
+    "singularName": "lms-conversation",
+    "pluralName": "lms-conversations",
+    "displayName": "lms-conversation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lms_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lms-user.lms-user",
+      "inversedBy": "lms_conversations"
+    },
+    "lms_messages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lms-message.lms-message",
+      "inversedBy": "lms_conversations"
+    }
+  }
+}
