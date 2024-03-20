@@ -29,6 +29,12 @@
     },
     "message": {
       "type": "string"
+    },
+    "lms_conversations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lms-conversation.lms-conversation",
+      "mappedBy": "lms_messages"
     }
   }
 }
