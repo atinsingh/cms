@@ -4,24 +4,31 @@
   "info": {
     "singularName": "lms-message",
     "pluralName": "lms-messages",
-    "displayName": "lms-message"
+    "displayName": "lms-message",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "user_id": {
+    "from": {
       "type": "string"
     },
     "messages": {
       "type": "json"
     },
-    "lms_user": {
+    "lms_users": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::lms-user.lms-user",
-      "inversedBy": "lms_message"
+      "mappedBy": "lms_message"
+    },
+    "to": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
     }
   }
 }
