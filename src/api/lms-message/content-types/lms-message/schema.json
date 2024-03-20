@@ -20,9 +20,9 @@
     },
     "lms_users": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::lms-user.lms-user",
-      "mappedBy": "lms_message"
+      "mappedBy": "lms_messages"
     },
     "to": {
       "type": "string"
