@@ -1478,18 +1478,21 @@ export interface ApiLmsMessageLmsMessage extends Schema.CollectionType {
     singularName: 'lms-message';
     pluralName: 'lms-messages';
     displayName: 'lms-message';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    user_id: Attribute.String;
+    from: Attribute.String;
     messages: Attribute.JSON;
-    lms_user: Attribute.Relation<
+    lms_users: Attribute.Relation<
       'api::lms-message.lms-message',
-      'oneToOne',
+      'oneToMany',
       'api::lms-user.lms-user'
     >;
+    to: Attribute.String;
+    message: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1818,11 +1821,6 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'oneToMany',
       'api::lms-certificate.lms-certificate'
     >;
-    lms_message: Attribute.Relation<
-      'api::lms-user.lms-user',
-      'oneToOne',
-      'api::lms-message.lms-message'
-    >;
     lms_user_courses: Attribute.Relation<
       'api::lms-user.lms-user',
       'oneToMany',
@@ -1866,6 +1864,11 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'api::lms-user.lms-user',
       'oneToMany',
       'api::lms-notification.lms-notification'
+    >;
+    lms_message: Attribute.Relation<
+      'api::lms-user.lms-user',
+      'manyToOne',
+      'api::lms-message.lms-message'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

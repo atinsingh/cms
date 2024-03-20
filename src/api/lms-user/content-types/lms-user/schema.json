@@ -52,12 +52,6 @@
       "relation": "oneToMany",
       "target": "api::lms-certificate.lms-certificate"
     },
-    "lms_message": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lms-message.lms-message",
-      "mappedBy": "lms_user"
-    },
     "lms_user_courses": {
       "type": "relation",
       "relation": "oneToMany",
@@ -132,6 +126,12 @@
       "relation": "oneToMany",
       "target": "api::lms-notification.lms-notification",
       "mappedBy": "lms_user"
+    },
+    "lms_message": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lms-message.lms-message",
+      "inversedBy": "lms_users"
     }
   }
 }
