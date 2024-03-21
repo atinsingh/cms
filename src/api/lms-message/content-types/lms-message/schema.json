@@ -18,11 +18,10 @@
     "messages": {
       "type": "json"
     },
-    "lms_users": {
+    "lms_user": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::lms-user.lms-user",
-      "mappedBy": "lms_messages"
+      "relation": "oneToOne",
+      "target": "api::lms-user.lms-user"
     },
     "to": {
       "type": "string"

@@ -1526,9 +1526,9 @@ export interface ApiLmsMessageLmsMessage extends Schema.CollectionType {
   attributes: {
     from: Attribute.String;
     messages: Attribute.JSON;
-    lms_users: Attribute.Relation<
+    lms_user: Attribute.Relation<
       'api::lms-message.lms-message',
-      'manyToMany',
+      'oneToOne',
       'api::lms-user.lms-user'
     >;
     to: Attribute.String;
@@ -1909,11 +1909,6 @@ export interface ApiLmsUserLmsUser extends Schema.CollectionType {
       'api::lms-user.lms-user',
       'oneToMany',
       'api::lms-notification.lms-notification'
-    >;
-    lms_messages: Attribute.Relation<
-      'api::lms-user.lms-user',
-      'manyToMany',
-      'api::lms-message.lms-message'
     >;
     lms_conversations: Attribute.Relation<
       'api::lms-user.lms-user',
