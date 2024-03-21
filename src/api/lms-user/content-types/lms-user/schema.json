@@ -127,12 +127,6 @@
       "target": "api::lms-notification.lms-notification",
       "mappedBy": "lms_user"
     },
-    "lms_messages": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::lms-message.lms-message",
-      "inversedBy": "lms_users"
-    },
     "lms_conversations": {
       "type": "relation",
       "relation": "manyToMany",
