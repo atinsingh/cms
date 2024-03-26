@@ -79,6 +79,9 @@
     },
     "imageUrl": {
       "type": "string"
+    },
+    "total_lessons": {
+      "type": "integer"
     }
   }
 }
