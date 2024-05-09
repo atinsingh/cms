@@ -275,6 +275,7 @@ export interface MapJsonDemoCourse extends Schema.Component {
   collectionName: 'components_map_json_demo_courses';
   info: {
     displayName: 'demoCourse';
+    description: '';
   };
   attributes: {
     courseName: Attribute.String;
@@ -282,6 +283,7 @@ export interface MapJsonDemoCourse extends Schema.Component {
     country: Attribute.String;
     demoDate: Attribute.Date;
     instructors: Attribute.Component<'map-json.demo-instructor', true>;
+    batchDate: Attribute.String;
   };
 }
 
@@ -583,6 +585,7 @@ export interface ScheduleCourseSchedule extends Schema.Component {
     cohortName: Attribute.String;
     schedule: Attribute.Component<'schedule.duration', true>;
     instructors: Attribute.Component<'map-json.demo-instructor', true>;
+    batchDate: Attribute.String;
   };
 }
 
