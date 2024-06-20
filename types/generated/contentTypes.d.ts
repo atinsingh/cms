@@ -1436,6 +1436,7 @@ export interface ApiLmsLessonLmsLesson extends Schema.CollectionType {
     duration: Attribute.Integer;
     type: Attribute.String;
     pdf: Attribute.Media;
+    videoUrl: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
