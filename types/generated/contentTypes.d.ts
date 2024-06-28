@@ -2500,6 +2500,7 @@ export interface ApiSkilldevelopmentPageSkilldevelopmentPage
     careerCoach: Attribute.Component<'course.careercoach'>;
     finance: Attribute.Component<'course.finance'>;
     seoCourse: Attribute.Component<'seo.seo'>;
+    techStacks: Attribute.Component<'partnerlogo.partners'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
