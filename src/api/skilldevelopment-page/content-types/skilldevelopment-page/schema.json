@@ -95,6 +95,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
+    },
+    "techStacks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partnerlogo.partners"
     }
   }
 }
