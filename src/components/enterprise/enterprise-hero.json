@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_enterprise_enterprise_heroes",
+  "info": {
+    "displayName": "enterpriseHero"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "heroImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map-json.hiring-json"
+    }
+  }
+}

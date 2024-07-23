@@ -155,6 +155,19 @@ export interface CourseVariables extends Schema.Component {
   };
 }
 
+export interface EnterpriseEnterpriseHero extends Schema.Component {
+  collectionName: 'components_enterprise_enterprise_heroes';
+  info: {
+    displayName: 'enterpriseHero';
+  };
+  attributes: {
+    heading: Attribute.String;
+    subHeading: Attribute.Text;
+    shortDescription: Attribute.Text;
+    heroImages: Attribute.Component<'map-json.hiring-json', true>;
+  };
+}
+
 export interface GalleryAboutGallery extends Schema.Component {
   collectionName: 'components_gallery_about_galleries';
   info: {
@@ -655,6 +668,7 @@ declare module '@strapi/types' {
       'course.paytype': CoursePaytype;
       'course.points': CoursePoints;
       'course.variables': CourseVariables;
+      'enterprise.enterprise-hero': EnterpriseEnterpriseHero;
       'gallery.about-gallery': GalleryAboutGallery;
       'hero.features': HeroFeatures;
       'hero.hero-component': HeroHeroComponent;

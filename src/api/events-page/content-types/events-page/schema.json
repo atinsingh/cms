@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events_pages",
+  "info": {
+    "singularName": "events-page",
+    "pluralName": "events-pages",
+    "displayName": "eventsPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "courseName": {
+      "type": "string"
+    },
+    "courseType": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "startTime": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "coursePosterUrl": {
+      "type": "text"
+    },
+    "posterImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "date": {
+      "type": "string"
+    }
+  }
+}
