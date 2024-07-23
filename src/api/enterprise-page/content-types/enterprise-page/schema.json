@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "enterprise_pages",
+  "info": {
+    "singularName": "enterprise-page",
+    "pluralName": "enterprise-pages",
+    "displayName": "enterprise-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "enterprise.enterprise-hero"
+    },
+    "globalPartners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partnerlogo.partners"
+    },
+    "featureData": {
+      "type": "component",
+      "repeatable": true,
+      "component": "assured.assured"
+    },
+    "partnersMarque": {
+      "type": "component",
+      "repeatable": false,
+      "component": "schedule.opportunities"
+    }
+  }
+}

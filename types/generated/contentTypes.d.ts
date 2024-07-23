@@ -1001,6 +1001,78 @@ export interface ApiEmployersPageEmployersPage extends Schema.SingleType {
   };
 }
 
+export interface ApiEnterprisePageEnterprisePage extends Schema.SingleType {
+  collectionName: 'enterprise_pages';
+  info: {
+    singularName: 'enterprise-page';
+    pluralName: 'enterprise-pages';
+    displayName: 'enterprise-page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heroComponent: Attribute.Component<'enterprise.enterprise-hero'>;
+    globalPartners: Attribute.Component<'partnerlogo.partners'>;
+    featureData: Attribute.Component<'assured.assured', true>;
+    partnersMarque: Attribute.Component<'schedule.opportunities'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::enterprise-page.enterprise-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::enterprise-page.enterprise-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventsPageEventsPage extends Schema.CollectionType {
+  collectionName: 'events_pages';
+  info: {
+    singularName: 'events-page';
+    pluralName: 'events-pages';
+    displayName: 'eventsPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    courseName: Attribute.String;
+    courseType: Attribute.String;
+    description: Attribute.Text;
+    startTime: Attribute.String;
+    endTime: Attribute.String;
+    duration: Attribute.String;
+    coursePosterUrl: Attribute.Text;
+    posterImage: Attribute.Media;
+    date: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::events-page.events-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::events-page.events-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqPageFaqPage extends Schema.SingleType {
   collectionName: 'faq_pages';
   info: {
@@ -2726,6 +2798,8 @@ declare module '@strapi/types' {
       'api::cloud-service-page.cloud-service-page': ApiCloudServicePageCloudServicePage;
       'api::company-career-page.company-career-page': ApiCompanyCareerPageCompanyCareerPage;
       'api::employers-page.employers-page': ApiEmployersPageEmployersPage;
+      'api::enterprise-page.enterprise-page': ApiEnterprisePageEnterprisePage;
+      'api::events-page.events-page': ApiEventsPageEventsPage;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::financial-support.financial-support': ApiFinancialSupportFinancialSupport;
       'api::home-page.home-page': ApiHomePageHomePage;
