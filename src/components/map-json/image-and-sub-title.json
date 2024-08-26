@@ -1,7 +1,8 @@
 {
   "collectionName": "components_map_json_image_and_sub_titles",
   "info": {
-    "displayName": "imageAndSubTitle"
+    "displayName": "imageAndSubTitle",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,16 +10,26 @@
       "type": "text"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "imageSubTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "keyName": {
+      "type": "string"
+    },
+    "value": {
       "type": "string"
     }
   }

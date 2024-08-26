@@ -364,11 +364,15 @@ export interface MapJsonImageAndSubTitle extends Schema.Component {
   collectionName: 'components_map_json_image_and_sub_titles';
   info: {
     displayName: 'imageAndSubTitle';
+    description: '';
   };
   attributes: {
     imageUrl: Attribute.Text;
     image: Attribute.Media;
     imageSubTitle: Attribute.String;
+    description: Attribute.Text;
+    keyName: Attribute.String;
+    value: Attribute.String;
   };
 }
 
