@@ -47,9 +47,8 @@
     "date": {
       "type": "string"
     },
-    "courseSlug": {
-      "type": "uid",
-      "required": true
+    "courseUrl": {
+      "type": "text"
     }
   }
 }
