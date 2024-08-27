@@ -4,7 +4,8 @@
   "info": {
     "singularName": "events-page",
     "pluralName": "events-pages",
-    "displayName": "eventsPage"
+    "displayName": "eventsPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -33,17 +34,22 @@
       "type": "text"
     },
     "posterImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "date": {
       "type": "string"
+    },
+    "courseSlug": {
+      "type": "uid",
+      "required": true
     }
   }
 }
