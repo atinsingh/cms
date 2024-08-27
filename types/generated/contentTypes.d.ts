@@ -1041,6 +1041,7 @@ export interface ApiEventsPageEventsPage extends Schema.CollectionType {
     singularName: 'events-page';
     pluralName: 'events-pages';
     displayName: 'eventsPage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1055,6 +1056,7 @@ export interface ApiEventsPageEventsPage extends Schema.CollectionType {
     coursePosterUrl: Attribute.Text;
     posterImage: Attribute.Media;
     date: Attribute.String;
+    courseSlug: Attribute.UID & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
