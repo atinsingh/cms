@@ -1057,6 +1057,7 @@ export interface ApiEventsPageEventsPage extends Schema.CollectionType {
     posterImage: Attribute.Media;
     date: Attribute.String;
     courseUrl: Attribute.Text;
+    redirectUrl: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -49,6 +49,9 @@
     },
     "courseUrl": {
       "type": "text"
+    },
+    "redirectUrl": {
+      "type": "text"
     }
   }
 }
